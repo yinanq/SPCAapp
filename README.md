@@ -1,4 +1,4 @@
-# SPCA Animal Shelter Volunteer Activity Logging App
+# SPCA Animal Shelter Volunteer Logging App
 
 use cases:
   1. a dog socializer volunteer Starts Shift, browses dog List using Filters, chooses which dog to visit and prepares for the visit based on List information and Details page Notes from previous visit submitted by other volunteers, starts visit, Ends Visit and Submits Notes, Ends Shift after several Visits in 2 hours.
