@@ -16,6 +16,8 @@
 		E1E6B1A51C89723E00965F90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E6B1A31C89723E00965F90 /* LaunchScreen.storyboard */; };
 		E1E6B1B01C89723E00965F90 /* SPCAappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6B1AF1C89723E00965F90 /* SPCAappTests.swift */; };
 		E1E6B1BB1C89723E00965F90 /* SPCAappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6B1BA1C89723E00965F90 /* SPCAappUITests.swift */; };
+		F61610641C9607BA00B22594 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61610631C9607BA00B22594 /* MainListViewController.swift */; };
+		F6AA2BC41C9628010002DAD7 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA2BC31C9628010002DAD7 /* AnimalCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		E1E6B1B61C89723E00965F90 /* SPCAappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPCAappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E6B1BA1C89723E00965F90 /* SPCAappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCAappUITests.swift; sourceTree = "<group>"; };
 		E1E6B1BC1C89723E00965F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F61610631C9607BA00B22594 /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
+		F6AA2BC31C9628010002DAD7 /* AnimalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			children = (
 				3A96CB721C8E862800ED511B /* LoginViewController.swift */,
 				3A96CB751C8E8DF100ED511B /* Login2ViewController.swift */,
+				F61610631C9607BA00B22594 /* MainListViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -110,10 +115,11 @@
 		E1E6B1991C89723E00965F90 /* SPCAapp */ = {
 			isa = PBXGroup;
 			children = (
+				F6AA2BC51C9628110002DAD7 /* Table View Cells */,
 				3A96CB741C8E863700ED511B /* View Controllers */,
+				E1E6B19E1C89723E00965F90 /* Main.storyboard */,
 				E1E6B19A1C89723E00965F90 /* AppDelegate.swift */,
 				E1E6B19C1C89723E00965F90 /* ViewController.swift */,
-				E1E6B19E1C89723E00965F90 /* Main.storyboard */,
 				E1E6B1A11C89723E00965F90 /* Assets.xcassets */,
 				E1E6B1A31C89723E00965F90 /* LaunchScreen.storyboard */,
 				E1E6B1A61C89723E00965F90 /* Info.plist */,
@@ -137,6 +143,14 @@
 				E1E6B1BC1C89723E00965F90 /* Info.plist */,
 			);
 			path = SPCAappUITests;
+			sourceTree = "<group>";
+		};
+		F6AA2BC51C9628110002DAD7 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F6AA2BC31C9628010002DAD7 /* AnimalCell.swift */,
+			);
+			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +290,8 @@
 				3A96CB731C8E862800ED511B /* LoginViewController.swift in Sources */,
 				E1E6B19D1C89723E00965F90 /* ViewController.swift in Sources */,
 				E1E6B19B1C89723E00965F90 /* AppDelegate.swift in Sources */,
+				F6AA2BC41C9628010002DAD7 /* AnimalCell.swift in Sources */,
+				F61610641C9607BA00B22594 /* MainListViewController.swift in Sources */,
 				3A96CB761C8E8DF100ED511B /* Login2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
