@@ -42,49 +42,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" id="Fbh-Ci-2aA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="Fbh-Ci-2aA">
                                 <rect key="frame" x="35" y="141" width="250" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" id="OLk-Xj-cIK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="OLk-Xj-cIK">
                                 <rect key="frame" x="35" y="187" width="250" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JL0-Qh-Zqz">
-                                <rect key="frame" x="0.0" y="509" width="320" height="59"/>
+                            <view contentMode="scaleToFill" id="POm-dn-5uH">
+                                <rect key="frame" x="0.0" y="508" width="320" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JL0-Qh-Zqz">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressLoginButton:" destination="Ult-mT-sRT" eventType="touchUpInside" id="hKi-nO-JkK"/>
+                                            <action selector="onVolunteerLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OYI-xR-bit"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="OTp-2s-gvR">
+                                        <rect key="frame" x="200" y="20" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressLoginButton:" destination="Ult-mT-sRT" eventType="touchUpInside" id="hKi-nO-JkK"/>
-                                    <action selector="onVolunteerLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OYI-xR-bit"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="OTp-2s-gvR">
-                                <rect key="frame" x="214" y="529" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="oCB-Xk-lGx" appends="YES" id="t3N-z2-PYM"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Fbh-Ci-2aA" id="tNs-mj-HGB"/>
                         <outlet property="loginButton" destination="JL0-Qh-Zqz" id="aJ6-vx-svl"/>
+                        <outlet property="loginButtonView" destination="POm-dn-5uH" id="SYk-2u-JW0"/>
                         <outlet property="passwordTextField" destination="OLk-Xj-cIK" id="8jo-Ie-wMM"/>
                         <outlet property="signInActivityIndicator" destination="OTp-2s-gvR" id="aV1-7V-Ik6"/>
-                        <segue destination="Ghl-wv-Kdi" kind="modal" id="rXq-eF-Raa"/>
+                        <segue destination="Ghl-wv-Kdi" kind="modal" identifier="logInSegue" id="rXq-eF-Raa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vG3-Sb-Q3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oCB-Xk-lGx">
+                    <connections>
+                        <action selector="onTap:" destination="Ult-mT-sRT" id="lsj-Gy-AW7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="162" y="1029"/>
         </scene>
