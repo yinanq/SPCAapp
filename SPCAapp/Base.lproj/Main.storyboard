@@ -187,11 +187,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="AnimalCell" rowHeight="100" id="z4J-9J-6gs" customClass="AnimalCell" customModule="SPCAapp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AnimalCell" rowHeight="100" id="z4J-9J-6gs" customClass="AnimalCell" customModule="SPCAapp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4J-9J-6gs" id="iwO-9S-qfb">
+<<<<<<< HEAD
                                             <rect key="frame" x="0.0" y="0.0" width="253" height="99"/>
+=======
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="99.5"/>
+>>>>>>> master
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="TLt-eK-Ovn">
@@ -224,22 +228,22 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="spc-C0-ar6">
-                                                    <rect key="frame" x="210" y="31" width="62" height="48"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="spc-C0-ar6">
+                                                    <rect key="frame" x="208" y="31" width="62" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hrs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mng-By-Jz8">
-                                                    <rect key="frame" x="272" y="57" width="18" height="15"/>
+                                                    <rect key="frame" x="270" y="57" width="18" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="since last visit" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pm7-R5-57o">
-                                                    <rect key="frame" x="210" y="75" width="80" height="15"/>
+                                                    <rect key="frame" x="208" y="75" width="80" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -250,6 +254,8 @@
                                         <connections>
                                             <outlet property="animalNameLabel" destination="gLb-Gj-3Pg" id="sx7-mx-FpE"/>
                                             <outlet property="colorCodeView" destination="TLt-eK-Ovn" id="kof-AM-pLv"/>
+                                            <outlet property="hoursSinceLastVisitLabel" destination="spc-C0-ar6" id="6Fh-VF-RDb"/>
+                                            <outlet property="hrOrHrsLabel" destination="mng-By-Jz8" id="GOv-7N-pd8"/>
                                             <outlet property="photoImageView" destination="OLi-CI-gaN" id="RTl-5A-hva"/>
                                             <outlet property="roomNumberLabel" destination="Ndt-1f-E5Z" id="vuH-jz-CQg"/>
                                             <outlet property="sizeLabel" destination="yEd-dc-lID" id="K2s-jb-2mL"/>
