@@ -14,16 +14,21 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var filtersButton: UIButton!
     @IBOutlet weak var shiftTimerView: UIView!
     @IBOutlet weak var mainlistTableView: UITableView!
+    @IBOutlet weak var endShiftButtonView: UIView!
     
 //    let tempNumberOfRowsInSection = 5
     var animalNames = ["Steffi", "Kelly", "Cloud", "Gold", "Harlowe"]
     var photos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe")]
+    var colorCodeColors = [greenLevelColor,greenLevelColor,yellowLevelColor,puppiesColor,targetColor]
+    var hoursSinceLastVist = [3.6, 3.2, 1.9, 0.7, 0.2]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainlistTableView.delegate = self
         mainlistTableView.dataSource = self
+        
+        endShiftButtonView.layer.cornerRadius = 19
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,9 +49,15 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let cell = tableView.dequeueReusableCellWithIdentifier("AnimalCell") as! AnimalCell
         
-//        cell.animalNameLabel.text = "DogName"
         cell.animalNameLabel.text = animalNames[indexPath.row]
         cell.photoImageView.image = photos[indexPath.row]
+        cell.photoImageView.layer.borderColor = colorCodeColors[indexPath.row].CGColor
+        cell.hoursSinceLastVisitLabel.text = "\(hoursSinceLastVist[indexPath.row])"
+        if hoursSinceLastVist[indexPath.row] > 1 {
+            cell.hrOrHrsLabel.text = "hrs since last visit"
+        } else {
+            cell.hrOrHrsLabel.text = "hr since last visit"
+        }
         
         return cell
     }

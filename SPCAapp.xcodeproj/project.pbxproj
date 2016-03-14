@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A96CB731C8E862800ED511B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96CB721C8E862800ED511B /* LoginViewController.swift */; };
 		3A96CB761C8E8DF100ED511B /* Login2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96CB751C8E8DF100ED511B /* Login2ViewController.swift */; };
+		E1754BB71C96944800745141 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1754BB61C96944800745141 /* Constants.swift */; };
 		E1E6B19B1C89723E00965F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6B19A1C89723E00965F90 /* AppDelegate.swift */; };
 		E1E6B19D1C89723E00965F90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6B19C1C89723E00965F90 /* ViewController.swift */; };
 		E1E6B1A01C89723E00965F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E6B19E1C89723E00965F90 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		3A96CB721C8E862800ED511B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A96CB751C8E8DF100ED511B /* Login2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login2ViewController.swift; sourceTree = "<group>"; };
+		E1754BB61C96944800745141 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E1E6B1971C89723E00965F90 /* SPCAapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPCAapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E6B19A1C89723E00965F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1E6B19C1C89723E00965F90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,10 +117,11 @@
 		E1E6B1991C89723E00965F90 /* SPCAapp */ = {
 			isa = PBXGroup;
 			children = (
-				F6AA2BC51C9628110002DAD7 /* Table View Cells */,
-				3A96CB741C8E863700ED511B /* View Controllers */,
 				E1E6B19E1C89723E00965F90 /* Main.storyboard */,
 				E1E6B19A1C89723E00965F90 /* AppDelegate.swift */,
+				E1754BB61C96944800745141 /* Constants.swift */,
+				3A96CB741C8E863700ED511B /* View Controllers */,
+				F6AA2BC51C9628110002DAD7 /* Table View Cells */,
 				E1E6B19C1C89723E00965F90 /* ViewController.swift */,
 				E1E6B1A11C89723E00965F90 /* Assets.xcassets */,
 				E1E6B1A31C89723E00965F90 /* LaunchScreen.storyboard */,
@@ -293,6 +296,7 @@
 				F6AA2BC41C9628010002DAD7 /* AnimalCell.swift in Sources */,
 				F61610641C9607BA00B22594 /* MainListViewController.swift in Sources */,
 				3A96CB761C8E8DF100ED511B /* Login2ViewController.swift in Sources */,
+				E1754BB71C96944800745141 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
