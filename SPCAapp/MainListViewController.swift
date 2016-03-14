@@ -15,8 +15,9 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var shiftTimerView: UIView!
     @IBOutlet weak var mainlistTableView: UITableView!
     
-    let tempNumberOfRowsInSection = 5
+//    let tempNumberOfRowsInSection = 5
     var animalNames = ["Steffi", "Kelly", "Cloud", "Gold", "Harlowe"]
+    var photos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +34,20 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tempNumberOfRowsInSection
+//        return tempNumberOfRowsInSection
+        return animalNames.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("AnimalCell")! as UITableViewCell
+        
+        print("Row: \(indexPath.row)")
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("AnimalCell") as! AnimalCell
+        
+//        cell.animalNameLabel.text = "DogName"
+        cell.animalNameLabel.text = animalNames[indexPath.row]
+        cell.photoImageView.image = photos[indexPath.row]
+        
         return cell
     }
     

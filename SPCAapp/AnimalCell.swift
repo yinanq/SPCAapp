@@ -15,8 +15,8 @@ class AnimalCell: UITableViewCell {
     @IBOutlet weak var animalNameLabel: UILabel!
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var roomNumberLabel: UILabel!
-    //TODO:
-    // remaining outlets
+    @IBOutlet weak var hoursSinceLastVisitLabel: UILabel!
+    @IBOutlet weak var hrOrHrsLabel: UILabel!
     
     
     override func awakeFromNib() {
