@@ -49,11 +49,19 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
         view.endEditing(true)
     }
     
+    @IBAction func symptomNotesDidBeginEditing(sender: AnyObject) {
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.visitSummaryScrollView.contentOffset.y = 80
+        }
+    }
+
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         if textField == behaviorTextField {
             behaviorTextField.resignFirstResponder()
             symptomTextField.becomeFirstResponder()
+//            CGPoint point = symptomTextfield.frame.origin ;
+//            scrollView.contentOffset = point
         }
         return true
     }
