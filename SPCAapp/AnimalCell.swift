@@ -8,9 +8,9 @@
 
 import UIKit
 
+
 class AnimalCell: UITableViewCell {
 
-    @IBOutlet weak var colorCodeView: UIView!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var animalNameLabel: UILabel!
     @IBOutlet weak var sizeLabel: UILabel!
@@ -18,10 +18,12 @@ class AnimalCell: UITableViewCell {
     @IBOutlet weak var hoursSinceLastVisitLabel: UILabel!
     @IBOutlet weak var hrOrHrsLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        photoImageView.layer.cornerRadius = 40
+        photoImageView.layer.borderWidth = 7
+//        photoImageView.layer.borderColor = StaffOnlyColor.CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
