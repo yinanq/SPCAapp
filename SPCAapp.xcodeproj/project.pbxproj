@@ -20,6 +20,7 @@
 		E1E6B1BB1C89723E00965F90 /* SPCAappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6B1BA1C89723E00965F90 /* SPCAappUITests.swift */; };
 		F61610641C9607BA00B22594 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61610631C9607BA00B22594 /* MainListViewController.swift */; };
 		F6AA2BC41C9628010002DAD7 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA2BC31C9628010002DAD7 /* AnimalCell.swift */; };
+		F6BBBAFA1C97B35600D4DD5F /* AnimalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BBBAF91C97B35600D4DD5F /* AnimalDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E1E6B1BC1C89723E00965F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F61610631C9607BA00B22594 /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 		F6AA2BC31C9628010002DAD7 /* AnimalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
+		F6BBBAF91C97B35600D4DD5F /* AnimalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimalDetailsViewController.swift; path = ../AnimalDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				3A96CB721C8E862800ED511B /* LoginViewController.swift */,
 				3A96CB751C8E8DF100ED511B /* Login2ViewController.swift */,
 				F61610631C9607BA00B22594 /* MainListViewController.swift */,
+				F6BBBAF91C97B35600D4DD5F /* AnimalDetailsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				F6AA2BC41C9628010002DAD7 /* AnimalCell.swift in Sources */,
 				F61610641C9607BA00B22594 /* MainListViewController.swift in Sources */,
 				3A96CB761C8E8DF100ED511B /* Login2ViewController.swift in Sources */,
+				F6BBBAFA1C97B35600D4DD5F /* AnimalDetailsViewController.swift in Sources */,
 				E1754BB71C96944800745141 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
