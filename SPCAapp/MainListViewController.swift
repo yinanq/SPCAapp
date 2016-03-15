@@ -65,10 +65,13 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //TODO:
-//        var destinationViewController.title = segue.destinationViewController as AnimalDetailsViewController
-        // Pass the selected object to the new view controller.
-    }
+    //TODO:
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        //TODO:
+//        var destinationViewController = segue.destinationViewController as AnimalDetailsViewController
+//        
+//        // Pass the selected object to the new view controller.
+//        destinationViewController.title = self.
+//    }
 
 }
