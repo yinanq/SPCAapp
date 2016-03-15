@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VisitSummaryViewController: UIViewController, UITextFieldDelegate {
+class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var behaviorTextField: UITextField!
     @IBOutlet weak var symptomTextField: UITextField!
@@ -17,6 +17,9 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        visitSummaryScrollView.delegate = self
+        visitSummaryScrollView.contentSize = CGSize (width: 320, height: 600)
+        // visitSummaryScrollView.delegate = self
         behaviorTextField.delegate = self
         
         // makes emailTextfield active when the view loads
@@ -52,10 +55,21 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate {
             behaviorTextField.resignFirstResponder()
             symptomTextField.becomeFirstResponder()
         }
-        
         return true
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView){
+        if visitSummaryScrollView.contentOffset.y <= -10 {
+            view.endEditing(true)
+        }
+    }
 
+//    func scrollViewDidScroll(visitSummaryScrollView: UIScrollView){
+//        if visitSummaryScrollView.contentOffset.y <= 10 {
+//            // Hide the keyboard
+//            view.endEditing(true)
+//        }
+//    }
 
     /*
     // MARK: - Navigation
