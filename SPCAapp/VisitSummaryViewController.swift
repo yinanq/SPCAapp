@@ -8,12 +8,23 @@
 
 import UIKit
 
-class VisitSummaryViewController: UIViewController {
+class VisitSummaryViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var behaviorTextField: UITextField!
+    @IBOutlet weak var symptomTextField: UITextField!
+    @IBOutlet weak var visitSummaryScrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        behaviorTextField.delegate = self
+        
+        // makes emailTextfield active when the view loads
+        behaviorTextField.becomeFirstResponder()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +32,30 @@ class VisitSummaryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func keyboardWillShow(notification: NSNotification!) {
+        let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
+    }
+    
+    // function for when the keyboard hides
+    func keyboardWillHide(notification: NSNotification!) {
+        let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
+    }
+    
+    
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        if textField == behaviorTextField {
+            behaviorTextField.resignFirstResponder()
+            symptomTextField.becomeFirstResponder()
+        }
+        
+        return true
+    }
+
 
     /*
     // MARK: - Navigation
