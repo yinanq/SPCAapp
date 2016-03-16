@@ -10,6 +10,7 @@ import UIKit
 
 class AnimalDetailsViewController: UIViewController {
 
+    var animalName: String!
     @IBOutlet weak var navItem: UINavigationItem!
     
     override func viewDidLoad() {
