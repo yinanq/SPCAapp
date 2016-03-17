@@ -11,11 +11,33 @@ import UIKit
 class AnimalDetailsViewController: UIViewController {
 
     var animalName: String!
+    var animalPhoto: UIImage!
+    
     @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    
+    @IBOutlet weak var photoContainerView: UIView!
+    
+    @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navItem.title = "Dog!"
+        
+        navItem.title = animalName
+        photoImageView.image = animalPhoto
+        
+        // dark gradient over photo to display light text on photo        
+        let photoCoverGradient = CAGradientLayer()
+        photoCoverGradient.frame = photoImageView.bounds
+        var colors = [CGColor]()
+        colors.append(UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).CGColor)
+        colors.append(UIColor(red: 0, green: 0, blue: 0, alpha: 0).CGColor)
+        photoCoverGradient.colors = colors
+        photoCoverGradient.startPoint = CGPointMake(0.5, 1)
+        photoCoverGradient.endPoint = CGPointMake(0.5, 0.7)
+        photoImageView.layer.addSublayer(photoCoverGradient)
+//        segmentedControl.apportionsSegmentWidthsByContent = true
     }
 
     override func didReceiveMemoryWarning() {

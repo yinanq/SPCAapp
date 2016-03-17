@@ -18,7 +18,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     
 //    let tempNumberOfRowsInSection = 5
     var animalNames = ["Steffi", "Kelly", "Cloud", "Gold", "Harlowe"]
-    var photos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe")]
+    var animalPhotos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe")]
     var colorCodeColors = [greenLevelColor,greenLevelColor,yellowLevelColor,puppiesColor,targetColor]
     var hoursSinceLastVist = [3.6, 3.2, 1.9, 0.7, 0.2]
     
@@ -36,6 +36,14 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // remove the shallow line at bottom of navbar
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController!.navigationBar.shadowImage = UIImage();
+    }
+    
     // MARK: - TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,7 +58,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCellWithIdentifier("AnimalCell") as! AnimalCell
         
         cell.animalNameLabel.text = animalNames[indexPath.row]
-        cell.photoImageView.image = photos[indexPath.row]
+        cell.photoImageView.image = animalPhotos[indexPath.row]
         cell.photoImageView.layer.borderColor = colorCodeColors[indexPath.row].CGColor
         cell.hoursSinceLastVisitLabel.text = "\(hoursSinceLastVist[indexPath.row])"
         if hoursSinceLastVist[indexPath.row] > 1 {
@@ -65,18 +73,17 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Navigation
 
     //TODO:
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        let cell = sender as! UITableViewCell
-//        let indexPath = mainlistTableView.indexPathForCell(cell)!
-//        
-//        let animalName = animalNames[indexPath.row]
-//        
-//        //TODO:
-//        var destinationViewController = segue.destinationViewController as! AnimalDetailsViewController
-//        
-//        // Pass the selected object to the new view controller.
-//        destinationViewController.animalName = self.animalName
-//    }
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = mainlistTableView.indexPathForCell(cell)!
+        
+        let animalName = animalNames[indexPath.row]
+        let animalPhoto = animalPhotos[indexPath.row]
+        
+        let destinationViewController = segue.destinationViewController as! AnimalDetailsViewController
+        
+        destinationViewController.animalName = animalName
+        destinationViewController.animalPhoto = animalPhoto
+    }
 }
