@@ -56,6 +56,8 @@ class AnimalDetailsViewController: UIViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("VisitCell") as! VisitCell
         
+        cell.visitTitle.text = visitTitles[indexPath.row]
+        
 //        cell.animalNameLabel.text = animalNames[indexPath.row]
 //        cell.photoImageView.image = animalPhotos[indexPath.row]
 //        cell.photoImageView.layer.borderColor = colorCodeColors[indexPath.row].CGColor
