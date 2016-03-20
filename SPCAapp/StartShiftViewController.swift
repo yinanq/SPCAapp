@@ -8,10 +8,12 @@
 
 import UIKit
 
-class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     
-    @IBOutlet weak var locationPickerView: UIPickerView!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var locationPickerView: UIPickerView! = UIPickerView()
+    @IBOutlet weak var startShiftButton: UIButton!
     
     var pickerData: [String] = [String]()
     
@@ -20,6 +22,13 @@ class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationPickerView.alpha = 0
+        locationPickerView.backgroundColor = UIColor.whiteColor()
+        
+        startShiftButton.backgroundColor = SPCABrandColor
+        startShiftButton.layer.cornerRadius = 80
+        
+        self.locationTextField.delegate = self
         self.locationPickerView.delegate = self
         self.locationPickerView.dataSource = self
         
@@ -45,6 +54,29 @@ class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPicker
         return pickerData[row]
     }
     
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+           UIView.animateWithDuration(0.3) { () -> Void in
+            self.locationTextField.text = self.pickerData[row]
+            self.locationPickerView.alpha = 0;
+            self.locationTextField.alpha = 1
+        }
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.locationPickerView.alpha = 1
+            self.locationTextField.alpha = 0
+        }
+        
+        
+        
+        return false
+    }
+    
+    @IBAction func onStartShiftTap(sender: UIButton) {
+        performSegueWithIdentifier("fromStartShift", sender: self)
+    }
     /*
     // MARK: - Navigation
     
