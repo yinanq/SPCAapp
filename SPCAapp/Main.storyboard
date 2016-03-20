@@ -114,14 +114,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" id="KvA-2i-Ls5">
-                                <rect key="frame" x="0.0" y="352" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="47" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" textAlignment="center" minimumFontSize="17" id="lRC-hv-pWs">
+                                <rect key="frame" x="23" y="140" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="LRX-I1-GkM">
+                                <rect key="frame" x="95" y="378" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="Start Shift">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="locationPickerView" destination="KvA-2i-Ls5" id="lNU-Oq-AR4"/>
+                        <outlet property="locationPickerView" destination="KvA-2i-Ls5" id="QxT-oL-Cka"/>
+                        <outlet property="locationTextField" destination="lRC-hv-pWs" id="1jD-7I-TnL"/>
+                        <outlet property="startShiftButton" destination="LRX-I1-GkM" id="0S3-7M-5LF"/>
                         <segue destination="wTN-1q-c4M" kind="modal" id="bUo-Fg-FIQ"/>
                     </connections>
                 </viewController>
