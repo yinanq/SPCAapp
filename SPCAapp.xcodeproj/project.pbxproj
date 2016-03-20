@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0952061C9F440C004C761F /* StartShiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0952051C9F440C004C761F /* StartShiftViewController.swift */; };
 		3A96CB731C8E862800ED511B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96CB721C8E862800ED511B /* LoginViewController.swift */; };
 		3A96CB761C8E8DF100ED511B /* Login2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96CB751C8E8DF100ED511B /* Login2ViewController.swift */; };
 		3AD48C0C1C9630B800A9F994 /* VisitSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD48C0B1C9630B800A9F994 /* VisitSummaryViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A0952051C9F440C004C761F /* StartShiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartShiftViewController.swift; sourceTree = "<group>"; };
 		3A96CB721C8E862800ED511B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A96CB751C8E8DF100ED511B /* Login2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login2ViewController.swift; sourceTree = "<group>"; };
 		3AD48C0B1C9630B800A9F994 /* VisitSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitSummaryViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				3AD48C0B1C9630B800A9F994 /* VisitSummaryViewController.swift */,
 				3A96CB721C8E862800ED511B /* LoginViewController.swift */,
 				3A96CB751C8E8DF100ED511B /* Login2ViewController.swift */,
+				3A0952051C9F440C004C761F /* StartShiftViewController.swift */,
 				F61610631C9607BA00B22594 /* MainListViewController.swift */,
 				F6BBBAF91C97B35600D4DD5F /* AnimalDetailsViewController.swift */,
 			);
@@ -302,6 +305,7 @@
 				E1E6B19B1C89723E00965F90 /* AppDelegate.swift in Sources */,
 				F6AA2BC41C9628010002DAD7 /* AnimalCell.swift in Sources */,
 				F61610641C9607BA00B22594 /* MainListViewController.swift in Sources */,
+				3A0952061C9F440C004C761F /* StartShiftViewController.swift in Sources */,
 				3A96CB761C8E8DF100ED511B /* Login2ViewController.swift in Sources */,
 				F6BBBAFA1C97B35600D4DD5F /* AnimalDetailsViewController.swift in Sources */,
 				E1754BB71C96944800745141 /* Constants.swift in Sources */,
