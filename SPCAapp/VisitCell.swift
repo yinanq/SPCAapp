@@ -11,9 +11,12 @@ import UIKit
 class VisitCell: UITableViewCell {
 
     @IBOutlet weak var visitTitle: UILabel!
-    
-    
-    
+    @IBOutlet weak var durationAndStartTime: UILabel!
+    @IBOutlet weak var volunteerInitial: UILabel!
+    @IBOutlet weak var behaviorNotesTitle: UILabel!
+    @IBOutlet weak var behaviorNotesContent: UILabel!
+    @IBOutlet weak var symptomNotesTitle: UILabel!
+    @IBOutlet weak var symptomNotesContent: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

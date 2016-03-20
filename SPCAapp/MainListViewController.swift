@@ -16,7 +16,6 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var mainlistTableView: UITableView!
     @IBOutlet weak var endShiftButtonView: UIView!
     
-//    let tempNumberOfRowsInSection = 5
     var animalNames = ["Steffi", "Kelly", "Cloud", "Gold", "Harlowe"]
     var animalPhotos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe")]
     var colorCodeColors = [greenLevelColor,greenLevelColor,yellowLevelColor,puppiesColor,targetColor]
@@ -39,7 +38,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // remove the shallow line at bottom of navbar
+        // remove the shadow line at bottom of navbar
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController!.navigationBar.shadowImage = UIImage();
     }

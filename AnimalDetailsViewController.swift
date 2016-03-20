@@ -8,21 +8,28 @@
 
 import UIKit
 
-class AnimalDetailsViewController: UIViewController {
+class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var animalName: String!
     var animalPhoto: UIImage!
     
     var visitTitles = ["Walk", "In-Room Socialization", "Walk", "Walk", "In-Room Socialization"]
+    var durationsAndStartTimes = ["20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM"]
+    var volunteerInitials = ["initial: AB", "initial: AB", "initial: AB", "initial: AB", "initial: AB"]
+    var behaviorNotesContents = ["placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content"]
+    var symptomNotesContents = ["placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent"]
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
+    @IBOutlet weak var visitsTableView: UITableView!
     @IBOutlet weak var photoContainerView: UIView!
     @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        visitsTableView.delegate = self
+        visitsTableView.dataSource = self
         
         navItem.title = animalName
         photoImageView.image = animalPhoto
@@ -49,6 +56,10 @@ class AnimalDetailsViewController: UIViewController {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return visitTitles.count
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 200
+    }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -57,16 +68,10 @@ class AnimalDetailsViewController: UIViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("VisitCell") as! VisitCell
         
         cell.visitTitle.text = visitTitles[indexPath.row]
-        
-//        cell.animalNameLabel.text = animalNames[indexPath.row]
-//        cell.photoImageView.image = animalPhotos[indexPath.row]
-//        cell.photoImageView.layer.borderColor = colorCodeColors[indexPath.row].CGColor
-//        cell.hoursSinceLastVisitLabel.text = "\(hoursSinceLastVist[indexPath.row])"
-//        if hoursSinceLastVist[indexPath.row] > 1 {
-//            cell.hrOrHrsLabel.text = "hrs since last visit"
-//        } else {
-//            cell.hrOrHrsLabel.text = "hr since last visit"
-//        }
+        cell.durationAndStartTime.text = durationsAndStartTimes[indexPath.row]
+        cell.volunteerInitial.text = volunteerInitials[indexPath.row]
+        cell.behaviorNotesContent.text = behaviorNotesContents[indexPath.row]
+        cell.symptomNotesContent.text = symptomNotesContents[indexPath.row]
         
         return cell
     }

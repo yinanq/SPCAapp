@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class AnimalCell: UITableViewCell {
 
     @IBOutlet weak var photoImageView: UIImageView!
@@ -23,7 +22,6 @@ class AnimalCell: UITableViewCell {
         
         photoImageView.layer.cornerRadius = 40
         photoImageView.layer.borderWidth = 7
-//        photoImageView.layer.borderColor = StaffOnlyColor.CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
