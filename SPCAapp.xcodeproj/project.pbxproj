@@ -20,6 +20,7 @@
 		E1E6B1B01C89723E00965F90 /* SPCAappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6B1AF1C89723E00965F90 /* SPCAappTests.swift */; };
 		E1E6B1BB1C89723E00965F90 /* SPCAappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6B1BA1C89723E00965F90 /* SPCAappUITests.swift */; };
 		F61610641C9607BA00B22594 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61610631C9607BA00B22594 /* MainListViewController.swift */; };
+		F67DEA761C9F42760070DA19 /* VisitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67DEA751C9F42760070DA19 /* VisitCell.swift */; };
 		F6AA2BC41C9628010002DAD7 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA2BC31C9628010002DAD7 /* AnimalCell.swift */; };
 		F6BBBAFA1C97B35600D4DD5F /* AnimalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BBBAF91C97B35600D4DD5F /* AnimalDetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		E1E6B1BA1C89723E00965F90 /* SPCAappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCAappUITests.swift; sourceTree = "<group>"; };
 		E1E6B1BC1C89723E00965F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F61610631C9607BA00B22594 /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
+		F67DEA751C9F42760070DA19 /* VisitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitCell.swift; sourceTree = "<group>"; };
 		F6AA2BC31C9628010002DAD7 /* AnimalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
 		F6BBBAF91C97B35600D4DD5F /* AnimalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimalDetailsViewController.swift; path = ../AnimalDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				F6AA2BC31C9628010002DAD7 /* AnimalCell.swift */,
+				F67DEA751C9F42760070DA19 /* VisitCell.swift */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				3AD48C0C1C9630B800A9F994 /* VisitSummaryViewController.swift in Sources */,
 				E1E6B19B1C89723E00965F90 /* AppDelegate.swift in Sources */,
 				F6AA2BC41C9628010002DAD7 /* AnimalCell.swift in Sources */,
+				F67DEA761C9F42760070DA19 /* VisitCell.swift in Sources */,
 				F61610641C9607BA00B22594 /* MainListViewController.swift in Sources */,
 				3A0952061C9F440C004C761F /* StartShiftViewController.swift in Sources */,
 				3A96CB761C8E8DF100ED511B /* Login2ViewController.swift in Sources */,

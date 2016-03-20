@@ -47,7 +47,6 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return tempNumberOfRowsInSection
         return animalNames.count
     }
     
@@ -72,7 +71,6 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Navigation
 
-    //TODO:
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let cell = sender as! UITableViewCell

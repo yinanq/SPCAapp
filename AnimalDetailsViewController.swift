@@ -13,12 +13,12 @@ class AnimalDetailsViewController: UIViewController {
     var animalName: String!
     var animalPhoto: UIImage!
     
+    var visitTitles = ["Walk", "In-Room Socialization", "Walk", "Walk", "In-Room Socialization"]
+    
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    
     @IBOutlet weak var photoContainerView: UIView!
-    
     @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -45,6 +45,29 @@ class AnimalDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Table View
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return visitTitles.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        print("Row: \(indexPath.row)")
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("VisitCell") as! VisitCell
+        
+//        cell.animalNameLabel.text = animalNames[indexPath.row]
+//        cell.photoImageView.image = animalPhotos[indexPath.row]
+//        cell.photoImageView.layer.borderColor = colorCodeColors[indexPath.row].CGColor
+//        cell.hoursSinceLastVisitLabel.text = "\(hoursSinceLastVist[indexPath.row])"
+//        if hoursSinceLastVist[indexPath.row] > 1 {
+//            cell.hrOrHrsLabel.text = "hrs since last visit"
+//        } else {
+//            cell.hrOrHrsLabel.text = "hr since last visit"
+//        }
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation
