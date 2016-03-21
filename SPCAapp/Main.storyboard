@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="udc-Ik-6Zk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -294,6 +294,13 @@
                                                 <color key="textColor" red="0.6588235294" green="0.69019607839999997" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VoT-7C-6Ho">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="38"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="onEndShift:" destination="fT2-Tr-2PV" eventType="touchUpInside" id="bqE-Yu-rm2"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -328,6 +335,7 @@
                         <outlet property="shiftTimerView" destination="3w2-QI-CC2" id="I4m-ed-Pxj"/>
                         <segue destination="z1i-eR-Ydq" kind="modal" id="IsA-6a-q3w"/>
                         <segue destination="4cs-eb-Q65" kind="modal" id="qqy-SC-XNi"/>
+                        <segue destination="Ghl-wv-Kdi" kind="modal" identifier="endShift" id="Dqr-Ly-WLI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xr-TR-Ckw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -762,5 +770,6 @@ Visit</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cmv-l6-hZX"/>
+        <segue reference="rXq-eF-Raa"/>
     </inferredMetricsTieBreakers>
 </document>
