@@ -9,7 +9,7 @@
 import UIKit
 
 class MainListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var filtersButton: UIButton!
@@ -18,8 +18,9 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var mainlistTableView: UITableView!
     @IBOutlet weak var endShiftButtonView: UIView!
     
-    var timer: NSTimer?
-    let dateFormatter = NSDateFormatter()
+    var timer = NSTimer()
+    var startTime = NSTimeInterval()
+    var shiftCounter = 0
     
     var animalNames = ["Steffi", "Kelly", "Cloud", "Gold", "Harlowe"]
     var animalPhotos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe")]
@@ -32,24 +33,35 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         mainlistTableView.delegate = self
         mainlistTableView.dataSource = self
         
-        dateFormatter.dateFormat = "hh:mm:ss"
-        updateTime()
-        
         endShiftButtonView.layer.cornerRadius = 19
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateTime", userInfo: nil, repeats: true)
-    }
-
-    func updateTime() {
-        shiftTimer.text = dateFormatter.stringFromDate(NSDate())
+        let aSelector : Selector = "updateTime"
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        startTime = NSDate.timeIntervalSinceReferenceDate()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // function to format the timer
+    func updateTime() {
+        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        var elapsedTime: NSTimeInterval = currentTime - startTime
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        shiftTimer.text = "\(strMinutes):\(strSeconds)"
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,6 +72,17 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         self.navigationController!.navigationBar.shadowImage = UIImage();
     }
     
+    func updateCounter() {
+        shiftTimer.text = String(format: "%02d", Int(shiftCounter++))
+    }
+    
+    // function for End Shift Button
+    @IBAction func onEndShift(sender: UIButton) {
+        timer.invalidate()
+        shiftCounter = 0
+        shiftTimer.text = String(shiftCounter)
+        performSegueWithIdentifier("endShift", sender: self)
+    }
     // MARK: - TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,7 +109,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: - Navigation
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let cell = sender as! UITableViewCell
