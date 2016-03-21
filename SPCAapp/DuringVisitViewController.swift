@@ -17,10 +17,13 @@ class DuringVisitViewController: UIViewController {
     @IBOutlet weak var endVisitView: UIView!
     
     var pressAndHolding = false
+    var endVisitViewNormalDiameter: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         endVisitView.layer.cornerRadius =  endVisitView.bounds.width/2
+        endVisitViewNormalDiameter = endVisitView.bounds.width
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "scaleEndVisitView", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +56,23 @@ class DuringVisitViewController: UIViewController {
     func growEndVisitView() {
         endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width+1, height: endVisitView.bounds.height+1)
         endVisitView.layer.cornerRadius = endVisitView.bounds.width/2
+    }
+    
+    func shrinkEndVisitView() {
+        if endVisitView.bounds.width > endVisitViewNormalDiameter {
+            endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width-1, height: endVisitView.bounds.height-1)
+            endVisitView.layer.cornerRadius = endVisitView.bounds.width/2
+        } else {
+            endVisitView.bounds.size = CGSize(width: endVisitViewNormalDiameter, height: endVisitViewNormalDiameter)
+        }
+    }
+    
+    func scaleEndVisitView() {
+        if pressAndHolding == true {
+            growEndVisitView()
+        } else {
+            shrinkEndVisitView()
+        }
     }
     
     func growEndVisitViewTo(diameter: CGFloat) {
