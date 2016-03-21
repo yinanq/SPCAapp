@@ -10,11 +10,16 @@ import UIKit
 
 class MainListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var filtersButton: UIButton!
+    @IBOutlet weak var shiftTimer: UILabel!
     @IBOutlet weak var shiftTimerView: UIView!
     @IBOutlet weak var mainlistTableView: UITableView!
     @IBOutlet weak var endShiftButtonView: UIView!
+    
+    var timer: NSTimer?
+    let dateFormatter = NSDateFormatter()
     
     var animalNames = ["Steffi", "Kelly", "Cloud", "Gold", "Harlowe"]
     var animalPhotos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe")]
@@ -27,9 +32,21 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         mainlistTableView.delegate = self
         mainlistTableView.dataSource = self
         
+        dateFormatter.dateFormat = "hh:mm:ss"
+        updateTime()
+        
         endShiftButtonView.layer.cornerRadius = 19
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateTime", userInfo: nil, repeats: true)
+    }
 
+    func updateTime() {
+        shiftTimer.text = dateFormatter.stringFromDate(NSDate())
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

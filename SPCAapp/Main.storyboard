@@ -130,6 +130,9 @@
                                 <state key="normal" title="Start Shift">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onStartShiftTap:" destination="Ghl-wv-Kdi" eventType="touchUpInside" id="EcG-kv-KIO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -138,7 +141,7 @@
                         <outlet property="locationPickerView" destination="KvA-2i-Ls5" id="QxT-oL-Cka"/>
                         <outlet property="locationTextField" destination="lRC-hv-pWs" id="1jD-7I-TnL"/>
                         <outlet property="startShiftButton" destination="LRX-I1-GkM" id="0S3-7M-5LF"/>
-                        <segue destination="wTN-1q-c4M" kind="modal" id="bUo-Fg-FIQ"/>
+                        <segue destination="wTN-1q-c4M" kind="modal" identifier="fromStartShift" id="bUo-Fg-FIQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xED-as-Bjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -270,7 +273,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lBF-8q-2LL">
-                                        <rect key="frame" x="8" y="11" width="57" height="27"/>
+                                        <rect key="frame" x="8" y="11" width="115" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -321,6 +324,7 @@
                         <outlet property="filtersButton" destination="j3Q-d9-zB4" id="yrj-A6-E8q"/>
                         <outlet property="mainlistTableView" destination="0EH-0n-ns7" id="IbI-XY-fJp"/>
                         <outlet property="settingsButton" destination="E4z-gz-sNJ" id="IcL-dY-SFS"/>
+                        <outlet property="shiftTimer" destination="lBF-8q-2LL" id="yil-mg-kKa"/>
                         <outlet property="shiftTimerView" destination="3w2-QI-CC2" id="I4m-ed-Pxj"/>
                         <segue destination="z1i-eR-Ydq" kind="modal" id="IsA-6a-q3w"/>
                         <segue destination="4cs-eb-Q65" kind="modal" id="qqy-SC-XNi"/>

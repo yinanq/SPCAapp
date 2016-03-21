@@ -68,9 +68,6 @@ class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPicker
             self.locationPickerView.alpha = 1
             self.locationTextField.alpha = 0
         }
-        
-        
-        
         return false
     }
     
