@@ -18,6 +18,10 @@ class DuringVisitViewController: UIViewController {
     @IBOutlet weak var endVisitLabel: UILabel!
     @IBOutlet weak var visitDurationLabel: UILabel!
     
+    @IBOutlet weak var endVisitWidth: NSLayoutConstraint!
+    @IBOutlet weak var endVisitHeight: NSLayoutConstraint!
+    @IBOutlet weak var endVisitDistanceToBottom: NSLayoutConstraint!
+    
     var pressAndHolding = false
     var endVisitViewNormalDiameter: CGFloat!
     var endVisitViewMaxDiameter: CGFloat!
@@ -48,7 +52,7 @@ class DuringVisitViewController: UIViewController {
     }
     
     func updateTime() {
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
         var elapsedTime: NSTimeInterval = currentTime - startTime
         let minutes = UInt8(elapsedTime / 60.0)
         elapsedTime -= (NSTimeInterval(minutes) * 60)
@@ -81,14 +85,30 @@ class DuringVisitViewController: UIViewController {
     
     func growEndVisitView() {
         if endVisitView.bounds.width < endVisitViewMaxDiameter {
-            endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width+1, height: endVisitView.bounds.height+1)
+            
+            //use this code if autolayout is off
+//            endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width+1, height: endVisitView.bounds.height+1)
+            
+            //use this code if autolayout is on
+            endVisitWidth.constant += 1
+            endVisitHeight.constant += 1
+            endVisitDistanceToBottom.constant -= 0.5
+            
             endVisitView.layer.cornerRadius = endVisitView.bounds.width/2
         }
     }
     
     func shrinkEndVisitView() {
         if endVisitView.bounds.width > endVisitViewNormalDiameter {
-            endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width-2, height: endVisitView.bounds.height-2)
+            
+            //use this code if autolayout is off
+//            endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width-2, height: endVisitView.bounds.height-2)
+            
+            //use this code if autolayout is on
+            endVisitWidth.constant -= 1
+            endVisitHeight.constant -= 1
+            endVisitDistanceToBottom.constant += 0.5
+            
             endVisitView.layer.cornerRadius = endVisitView.bounds.width/2
         }
     }
