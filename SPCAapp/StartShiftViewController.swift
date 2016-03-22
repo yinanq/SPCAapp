@@ -17,8 +17,6 @@ class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     var pickerData: [String] = [String]()
     
-//    var pickerData = ["Mission Campus", "Pacific Heights Campus", "Humane Education and Dog Training"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +30,7 @@ class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.locationPickerView.delegate = self
         self.locationPickerView.dataSource = self
         
-        pickerData = ["Mission Campus", "Pacific Heights Campus", "Humane Education and Dog Training"]
+        pickerData = ["Mission Campus", "Pacific Heights Campus", "Humane Education & Dog Training"]
 
         // Do any additional setup after loading the view.
     }
