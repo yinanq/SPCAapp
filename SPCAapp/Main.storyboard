@@ -197,7 +197,7 @@
             <objects>
                 <viewController id="fT2-Tr-2PV" customClass="MainListViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wRd-xJ-th4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" id="0EH-0n-ns7">
@@ -369,7 +369,7 @@
             <objects>
                 <viewController id="2i8-Va-GL3" customClass="AnimalDetailsViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5df-it-Irn">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="wpz-tR-Lmv">

@@ -34,13 +34,14 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         mainlistTableView.dataSource = self
         
         endShiftButtonView.layer.cornerRadius = 19
+        
+        let aSelector : Selector = "updateTime"
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        startTime = NSDate.timeIntervalSinceReferenceDate()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let aSelector : Selector = "updateTime"
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-        startTime = NSDate.timeIntervalSinceReferenceDate()
         
     }
     
