@@ -517,28 +517,6 @@
             </objects>
             <point key="canvasLocation" x="1226" y="2437"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="trN-3R-pU5">
-            <objects>
-                <viewController id="s1y-hg-6ts" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kVv-Bt-olU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Visits w Start Visit Button" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="spP-bK-FsB">
-                                <rect key="frame" x="69" y="253" width="183" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wMx-Hd-6ms" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1496" y="1806"/>
-        </scene>
         <!--During Visit View Controller-->
         <scene sceneID="pCn-Sg-Hd9">
             <objects>
@@ -582,42 +560,32 @@
                             <view contentMode="scaleToFill" id="obb-xB-lyt">
                                 <rect key="frame" x="110" y="398" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eXl-ZL-iz6">
-                                        <rect key="frame" x="23" y="14" width="55" height="72"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">End
-Visit</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="71a-Dq-25U" appends="YES" id="aBo-QK-KYV"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ktT-8M-V35">
-                                <rect key="frame" x="13" y="214" width="102" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eXl-ZL-iz6">
+                                <rect key="frame" x="133" y="411" width="55" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="EndVisitButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTouchUpInsideEndVisitButton:" destination="udc-Ik-6Zk" eventType="touchUpInside" id="aom-0I-UTk"/>
-                                </connections>
-                            </button>
+                                <string key="text">End
+Visit</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="animalName" destination="5Uv-Pg-qjp" id="UOP-f8-TQn"/>
                         <outlet property="animalPhoto" destination="RFa-SW-WCX" id="29E-1j-dnx"/>
+                        <outlet property="endVisitLabel" destination="eXl-ZL-iz6" id="aUm-F0-mPu"/>
                         <outlet property="endVisitView" destination="obb-xB-lyt" id="6UI-tT-8bg"/>
                         <outlet property="roomNumber" destination="1Bg-8A-f8P" id="NHV-yB-3bz"/>
                         <outlet property="visitTitle" destination="92O-F6-hOo" id="08h-nk-XtR"/>
+                        <segue destination="Pwd-PL-GMB" kind="modal" identifier="endVisitSegue" id="Ysr-IY-fJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfg-0p-sea" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -626,9 +594,8 @@ Visit</string>
                         <action selector="didLongPressEndVisitView:" destination="udc-Ik-6Zk" id="hT7-LY-mqm"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <tapGestureRecognizer id="C8i-Zb-P3s"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="1803"/>
+            <point key="canvasLocation" x="1717" y="1806"/>
         </scene>
         <!--Visit Summary View Controller-->
         <scene sceneID="z10-ZV-i6i">

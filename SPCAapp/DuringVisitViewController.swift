@@ -15,15 +15,21 @@ class DuringVisitViewController: UIViewController {
     @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var roomNumber: UILabel!
     @IBOutlet weak var endVisitView: UIView!
+    @IBOutlet weak var endVisitLabel: UILabel!
     
     var pressAndHolding = false
     var endVisitViewNormalDiameter: CGFloat!
+    var endVisitViewMaxDiameter: CGFloat!
+    var endVisitViewScaleTimer: NSTimer!
+    var visitDurationTimer: NSTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         endVisitView.layer.cornerRadius =  endVisitView.bounds.width/2
         endVisitViewNormalDiameter = endVisitView.bounds.width
-        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "scaleEndVisitView", userInfo: nil, repeats: true)
+        endVisitViewMaxDiameter = 950
+        
+        endVisitViewScaleTimer = NSTimer.scheduledTimerWithTimeInterval(0.002, target: self, selector: "scaleEndVisitView", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,35 +41,31 @@ class DuringVisitViewController: UIViewController {
         NSLog("long press")
         NSLog("pressAndHolding is \(pressAndHolding)")
         if sender.state == UIGestureRecognizerState.Began {
-            NSLog("long press state Began")
+            NSLog("long press state: Began")
             pressAndHolding = true
             NSLog("pressAndHolding is \(pressAndHolding)")
         } else if sender.state == UIGestureRecognizerState.Ended {
-            NSLog("long press state Ended")
+            NSLog("long press state: Ended")
             pressAndHolding = false
             NSLog("pressAndHolding is \(pressAndHolding)")
         } else {
-            NSLog("long press state else")
+            NSLog("long press state: else")
         }
-    }
-    
-    @IBAction func didTouchUpInsideEndVisitButton(sender: AnyObject) {
-        growEndVisitView()
     }
 
     // MARK: - My Functions
     
     func growEndVisitView() {
-        endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width+1, height: endVisitView.bounds.height+1)
-        endVisitView.layer.cornerRadius = endVisitView.bounds.width/2
+        if endVisitView.bounds.width < endVisitViewMaxDiameter {
+            endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width+1, height: endVisitView.bounds.height+1)
+            endVisitView.layer.cornerRadius = endVisitView.bounds.width/2
+        }
     }
     
     func shrinkEndVisitView() {
         if endVisitView.bounds.width > endVisitViewNormalDiameter {
-            endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width-1, height: endVisitView.bounds.height-1)
+            endVisitView.bounds.size = CGSize(width: endVisitView.bounds.width-2, height: endVisitView.bounds.height-2)
             endVisitView.layer.cornerRadius = endVisitView.bounds.width/2
-        } else {
-            endVisitView.bounds.size = CGSize(width: endVisitViewNormalDiameter, height: endVisitViewNormalDiameter)
         }
     }
     
@@ -73,12 +75,22 @@ class DuringVisitViewController: UIViewController {
         } else {
             shrinkEndVisitView()
         }
+        if endVisitView.bounds.width >= endVisitViewMaxDiameter {
+            endVisitViewScaleTimer.invalidate()
+            performSegueWithIdentifier("endVisitSegue", sender: self)
+        }
     }
     
-    func growEndVisitViewTo(diameter: CGFloat) {
-        endVisitView.bounds.size = CGSize(width: diameter, height: diameter)
-        endVisitView.layer.cornerRadius = diameter/2
-    }
+//    func endVisit() {
+//        if endVisitView.bounds.width >= endVisitViewMaxDiameter {
+//            performSegueWithIdentifier("endVisitSegue", sender: self)
+//        }
+//    }
+//    
+//    func growEndVisitViewTo(diameter: CGFloat) {
+//        endVisitView.bounds.size = CGSize(width: diameter, height: diameter)
+//        endVisitView.layer.cornerRadius = diameter/2
+//    }
     
     /*
     // MARK: - Navigation
