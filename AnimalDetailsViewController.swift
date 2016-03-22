@@ -23,7 +23,7 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     var newVisitBehaviorNotesContent: String!
     var symptomNotesContents = ["placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent"]
     var newVisitSymptomNotesContent: String!
-    var isSummaryViewController = false
+    var hasNewVisitToAdd = false
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -34,7 +34,7 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if isSummaryViewController == true {
+        if hasNewVisitToAdd == true {
             visitTitles.insert(newVisitTitle, atIndex: 0)
             durationsAndStartTimes.insert(newVisitDurationAndStartTime, atIndex: 0)
             volunteerInitials.insert(userInitials, atIndex: 0)
