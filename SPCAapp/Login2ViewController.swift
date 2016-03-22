@@ -24,6 +24,7 @@ class Login2ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         // makes emailTextfield active when the view loads
         emailTextField.becomeFirstResponder()
@@ -70,6 +71,7 @@ class Login2ViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         }
         else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
             performSegueWithIdentifier("logInSegue", sender: self)
         }
         

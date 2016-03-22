@@ -21,6 +21,7 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
         visitSummaryScrollView.contentSize = CGSize (width: 320, height: 600)
         // visitSummaryScrollView.delegate = self
         behaviorTextField.delegate = self
+        symptomTextField.delegate = self
         
         // makes emailTextfield active when the view loads
         behaviorTextField.becomeFirstResponder()
@@ -63,9 +64,14 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
 //            CGPoint point = symptomTextfield.frame.origin ;
 //            scrollView.contentOffset = point
         }
+        else if textField == symptomTextField {
+            symptomTextField.resignFirstResponder()
+            performSegueWithIdentifier("fromVisitSummaryForm", sender: self)
+        }
         return true
     }
     
+    // hides keyboard when if the user is in a text field and scrolls down
     func scrollViewDidScroll(scrollView: UIScrollView){
         if visitSummaryScrollView.contentOffset.y <= -10 {
             view.endEditing(true)

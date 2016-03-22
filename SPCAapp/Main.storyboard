@@ -26,6 +26,10 @@
                                     <segue destination="Ult-mT-sRT" kind="modal" id="kih-uU-bQc"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="spca" id="Dku-yF-gww">
+                                <rect key="frame" x="55" y="137" width="210" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -708,7 +712,7 @@ Visit</string>
                                     <navigationItem title="Visit Summary" id="wpD-T1-ngl">
                                         <barButtonItem key="rightBarButtonItem" title="Submit" id="PAE-wc-bc4">
                                             <connections>
-                                                <segue destination="wTN-1q-c4M" kind="modal" id="cmv-l6-hZX"/>
+                                                <segue destination="wTN-1q-c4M" kind="modal" identifier="fromVisitSummaryForm" id="cmv-l6-hZX"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -767,9 +771,10 @@ Visit</string>
         <image name="arrowForSliderButton" width="10" height="18"/>
         <image name="filtersButton" width="23" height="24"/>
         <image name="settingsButton" width="24" height="24"/>
+        <image name="spca" width="210" height="81"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cmv-l6-hZX"/>
         <segue reference="rXq-eF-Raa"/>
+        <segue reference="bUo-Fg-FIQ"/>
     </inferredMetricsTieBreakers>
 </document>

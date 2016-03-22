@@ -71,8 +71,40 @@ class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPicker
         return false
     }
     
+    func showAlertWithTitle(title: String, andMessage message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .Cancel){ (action) in }
+        alert.addAction(cancelAction)
+        presentViewController(alert, animated: true){}
+    }
+    
     @IBAction func onStartShiftTap(sender: UIButton) {
-        performSegueWithIdentifier("fromStartShift", sender: self)
+        if locationTextField.text!.isEmpty {
+            showAlertWithTitle("Location is Required", andMessage: "Please select a location.")
+        }
+        else {
+            performSegueWithIdentifier("fromStartShift", sender: self)
+        }
+        
+//        @IBAction func didPressLoginButton(sender: AnyObject) {
+//            if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+//                showAlertWithTitle("Email & Password Required", andMessage: "Please enter an email address and password.")
+//            }
+//            else {
+//                signInActivityIndicator.startAnimating()
+//                delay(1) {
+//                    if self.emailTextField.text == "em" && self.passwordTextField.text == "pw" {
+//                        self.signInActivityIndicator.stopAnimating()
+//                        self.performSegueWithIdentifier("logInSegue", sender: self)
+//                    }
+//                    else {
+//                        self.signInActivityIndicator.stopAnimating()
+//                        self.showAlertWithTitle("Invalid Email or Password", andMessage: "Please check the email and password combination.")
+//                    }
+//                }
+//            }
+//        }
+        
     }
     /*
     // MARK: - Navigation
