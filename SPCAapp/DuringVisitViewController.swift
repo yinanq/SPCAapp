@@ -105,19 +105,7 @@ class DuringVisitViewController: UIViewController {
             performSegueWithIdentifier("endVisitSegue", sender: self)
         }
     }
-
-//    func endVisit() {
-//        if endVisitView.bounds.width >= endVisitViewMaxDiameter {
-//            performSegueWithIdentifier("endVisitSegue", sender: self)
-//        }
-//    }
-//    
-//    func growEndVisitViewTo(diameter: CGFloat) {
-//        endVisitView.bounds.size = CGSize(width: diameter, height: diameter)
-//        endVisitView.layer.cornerRadius = diameter/2
-//    }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -125,6 +113,5 @@ class DuringVisitViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

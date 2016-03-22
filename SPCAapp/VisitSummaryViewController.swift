@@ -14,6 +14,9 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
     @IBOutlet weak var symptomTextField: UITextField!
     @IBOutlet weak var visitSummaryScrollView: UIScrollView!
     
+    // TODO:
+//    var visi
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

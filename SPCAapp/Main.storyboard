@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -9,6 +9,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Afc-wr-Dkw"/>
+                        <viewControllerLayoutGuide type="bottom" id="NoA-ej-2hT"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +44,10 @@
         <scene sceneID="us6-ZD-Agv">
             <objects>
                 <viewController storyboardIdentifier="Login2ViewController" id="Ult-mT-sRT" customClass="Login2ViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w0L-op-fs9"/>
+                        <viewControllerLayoutGuide type="bottom" id="FP8-Ac-toa"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XNF-6b-YHS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,6 +114,10 @@
         <scene sceneID="Cr6-mq-mxE">
             <objects>
                 <viewController id="Ghl-wv-Kdi" customClass="StartShiftViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bf5-bN-2rX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mlc-t0-UE2"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8WX-ss-zan">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,6 +158,10 @@
         <scene sceneID="tn1-A1-tFl">
             <objects>
                 <viewController id="z1i-eR-Ydq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AlY-Xc-leW"/>
+                        <viewControllerLayoutGuide type="bottom" id="J5d-r9-aiW"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7mI-jp-bzc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,6 +183,10 @@
         <scene sceneID="OZw-Fw-Ob6">
             <objects>
                 <viewController id="4cs-eb-Q65" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iwd-ll-oS2"/>
+                        <viewControllerLayoutGuide type="bottom" id="feF-Tg-11D"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dld-Ua-v23">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,12 +208,49 @@
         <scene sceneID="J4g-K8-PF8">
             <objects>
                 <viewController id="fT2-Tr-2PV" customClass="MainListViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eWy-Qv-vwb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ycp-9T-2PW"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wRd-xJ-th4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3w2-QI-CC2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBF-8q-2LL">
+                                        <rect key="frame" x="8" y="11" width="115" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GGV-hX-pOB">
+                                        <rect key="frame" x="214" y="6" width="100" height="38"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="arrowForSliderButton" translatesAutoresizingMaskIntoConstraints="NO" id="c3Z-zV-PWy">
+                                                <rect key="frame" x="11" y="6" width="15" height="26"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Shift" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRC-b3-GeW">
+                                                <rect key="frame" x="26" y="10" width="61" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="textColor" red="0.6588235294" green="0.69019607839999997" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoT-7C-6Ho">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="38"/>
+                                                <connections>
+                                                    <action selector="onEndShift:" destination="fT2-Tr-2PV" eventType="touchUpInside" id="ZYo-Xf-cD3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.6588235294117647" green="0.69019607843137254" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0EH-0n-ns7">
-                                <rect key="frame" x="0.0" y="114" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.8862745098" green="0.87058823529999996" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -253,39 +310,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3w2-QI-CC2">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBF-8q-2LL">
-                                        <rect key="frame" x="8" y="11" width="115" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GGV-hX-pOB">
-                                        <rect key="frame" x="214" y="6" width="100" height="38"/>
-                                        <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="arrowForSliderButton" translatesAutoresizingMaskIntoConstraints="NO" id="c3Z-zV-PWy">
-                                                <rect key="frame" x="11" y="6" width="15" height="26"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Shift" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRC-b3-GeW">
-                                                <rect key="frame" x="26" y="10" width="61" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                <color key="textColor" red="0.6588235294" green="0.69019607839999997" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoT-7C-6Ho">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="38"/>
-                                                <connections>
-                                                    <action selector="onEndShift:" destination="fT2-Tr-2PV" eventType="touchUpInside" id="ZYo-Xf-cD3"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.6588235294117647" green="0.69019607843137254" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.88627450980392153" green="0.87058823529411766" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -305,6 +329,8 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="endShiftButtonView" destination="GGV-hX-pOB" id="IMA-P5-eMb"/>
                         <outlet property="filtersButton" destination="j3Q-d9-zB4" id="yrj-A6-E8q"/>
@@ -325,6 +351,10 @@
         <scene sceneID="5V9-DV-ZBB">
             <objects>
                 <viewController id="41m-4T-YPf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c68-TJ-Tx3"/>
+                        <viewControllerLayoutGuide type="bottom" id="b3E-kd-mjC"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WV8-je-bwW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,12 +376,16 @@
         <scene sceneID="iYc-z4-riq">
             <objects>
                 <viewController id="2i8-Va-GL3" customClass="AnimalDetailsViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UW1-Cg-gRz"/>
+                        <viewControllerLayoutGuide type="bottom" id="bPR-hp-OW6"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5df-it-Irn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpz-tR-Lmv">
-                                <rect key="frame" x="0.0" y="66.5" width="320" height="409"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="409.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Go7-eH-p6q">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="147"/>
@@ -456,16 +490,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20S-gP-Hl2">
-                                <rect key="frame" x="0.0" y="513" width="320" height="55"/>
-                                <color key="backgroundColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Start Visit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9v-t6-pcn">
-                                <rect key="frame" x="0.0" y="528" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Yr-eW-rKl">
                                         <rect key="frame" x="60" y="4" width="200" height="29"/>
@@ -478,10 +504,20 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20S-gP-Hl2">
+                                <rect key="frame" x="0.0" y="449" width="320" height="55"/>
+                                <color key="backgroundColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Start Visit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="D4I-2N-d0p"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="navItem" destination="D4I-2N-d0p" id="ONT-Lc-5Jm"/>
                         <outlet property="photoContainerView" destination="Go7-eH-p6q" id="yD1-nq-dF4"/>
@@ -498,6 +534,10 @@
         <scene sceneID="pCn-Sg-Hd9">
             <objects>
                 <viewController id="udc-Ik-6Zk" customClass="DuringVisitViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pAk-HH-Uva"/>
+                        <viewControllerLayoutGuide type="bottom" id="KCM-N4-XRP"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cQc-v7-3D5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -572,6 +612,10 @@ Visit</string>
         <scene sceneID="z10-ZV-i6i">
             <objects>
                 <viewController storyboardIdentifier="VisitSummaryViewController" id="Pwd-PL-GMB" customClass="VisitSummaryViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VO7-A0-yMf"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Bx-Dv-6g7"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JlJ-dV-Qrb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -673,6 +717,8 @@ Visit</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wTN-1q-c4M" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tT3-90-L55">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
