@@ -376,7 +376,7 @@
         <!--Animal Details View Controller-->
         <scene sceneID="iYc-z4-riq">
             <objects>
-                <viewController id="2i8-Va-GL3" customClass="AnimalDetailsViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimalDetailsViewController" id="2i8-Va-GL3" customClass="AnimalDetailsViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UW1-Cg-gRz"/>
                         <viewControllerLayoutGuide type="bottom" id="bPR-hp-OW6"/>
@@ -512,6 +512,9 @@
                                 <state key="normal" title="Start Visit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="udc-Ik-6Zk" kind="modal" id="fki-vr-MtN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

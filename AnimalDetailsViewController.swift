@@ -13,11 +13,17 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     var animalName: String!
     var animalPhoto: UIImage!
     
-    var visitTitles = ["Walk", "In-Room Socialization", "Walk", "Walk", "In-Room Socialization"]
+    var visitTitles = ["Walk", "Socialization", "Walk", "Walk", "Socialization"]
+    var newVisitTitle: String!
     var durationsAndStartTimes = ["20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM"]
-    var volunteerInitials = ["initial: AB", "initial: AB", "initial: AB", "initial: AB", "initial: AB"]
+    var newVisitDurationAndStartTime: String!
+    var volunteerInitials = ["initial: AB", "initial: CD", "initial: EF", "initial: GH", "initial: IJ"]
+    let userInitials = "YQ"
     var behaviorNotesContents = ["placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content"]
+    var newVisitBehaviorNotesContent: String!
     var symptomNotesContents = ["placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent"]
+    var newVisitSymptomNotesContent: String!
+    var isSummaryViewController = false
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -27,6 +33,14 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if isSummaryViewController == true {
+            visitTitles.insert(newVisitTitle, atIndex: 0)
+            durationsAndStartTimes.insert(newVisitDurationAndStartTime, atIndex: 0)
+            volunteerInitials.insert(userInitials, atIndex: 0)
+            behaviorNotesContents.insert(newVisitBehaviorNotesContent, atIndex: 0)
+            symptomNotesContents.insert(newVisitSymptomNotesContent, atIndex: 0)
+        }
         
         visitsTableView.delegate = self
         visitsTableView.dataSource = self
