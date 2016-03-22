@@ -10,7 +10,6 @@ import UIKit
 
 class MainListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var filtersButton: UIButton!
     @IBOutlet weak var shiftTimer: UILabel!
@@ -42,7 +41,6 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
 //        startTime = NSDate.timeIntervalSinceReferenceDate()
     }
     
-
     func updateTime() {
         shiftTimer.text = dateFormatter.stringFromDate(NSDate())
     }
@@ -99,5 +97,10 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         destinationViewController.animalName = animalName
         destinationViewController.animalPhoto = animalPhoto
+    }
+    
+    @IBAction func onEndShift(sender: AnyObject) {
+        timer?.invalidate()
+        performSegueWithIdentifier("endShift", sender: self)
     }
 }

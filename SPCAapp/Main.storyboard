@@ -124,7 +124,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" textAlignment="center" minimumFontSize="17" id="lRC-hv-pWs">
                                 <rect key="frame" x="23" y="140" width="275" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="LRX-I1-GkM">
@@ -302,7 +302,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="38"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
-                                                    <action selector="onEndShift:" destination="fT2-Tr-2PV" eventType="touchUpInside" id="bqE-Yu-rm2"/>
+                                                    <action selector="onEndShift:" destination="fT2-Tr-2PV" eventType="touchUpInside" id="ZYo-Xf-cD3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -741,7 +741,7 @@ Visit</string>
         <image name="spca" width="210" height="81"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rXq-eF-Raa"/>
         <segue reference="bUo-Fg-FIQ"/>
+        <segue reference="Dqr-Ly-WLI"/>
     </inferredMetricsTieBreakers>
 </document>

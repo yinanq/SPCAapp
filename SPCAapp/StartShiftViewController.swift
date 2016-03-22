@@ -86,25 +86,6 @@ class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPicker
             performSegueWithIdentifier("fromStartShift", sender: self)
         }
         
-//        @IBAction func didPressLoginButton(sender: AnyObject) {
-//            if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-//                showAlertWithTitle("Email & Password Required", andMessage: "Please enter an email address and password.")
-//            }
-//            else {
-//                signInActivityIndicator.startAnimating()
-//                delay(1) {
-//                    if self.emailTextField.text == "em" && self.passwordTextField.text == "pw" {
-//                        self.signInActivityIndicator.stopAnimating()
-//                        self.performSegueWithIdentifier("logInSegue", sender: self)
-//                    }
-//                    else {
-//                        self.signInActivityIndicator.stopAnimating()
-//                        self.showAlertWithTitle("Invalid Email or Password", andMessage: "Please check the email and password combination.")
-//                    }
-//                }
-//            }
-//        }
-        
     }
     /*
     // MARK: - Navigation
