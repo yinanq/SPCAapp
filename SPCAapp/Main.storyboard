@@ -581,6 +581,7 @@ Visit</string>
                     <connections>
                         <outlet property="animalName" destination="5Uv-Pg-qjp" id="UOP-f8-TQn"/>
                         <outlet property="animalPhoto" destination="RFa-SW-WCX" id="29E-1j-dnx"/>
+                        <outlet property="durationTimerLabel" destination="PTp-pN-Cu9" id="x0b-4p-GVK"/>
                         <outlet property="endVisitLabel" destination="eXl-ZL-iz6" id="aUm-F0-mPu"/>
                         <outlet property="endVisitView" destination="obb-xB-lyt" id="6UI-tT-8bg"/>
                         <outlet property="roomNumber" destination="1Bg-8A-f8P" id="NHV-yB-3bz"/>

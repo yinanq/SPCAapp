@@ -15,21 +15,28 @@ class DuringVisitViewController: UIViewController {
     @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var roomNumber: UILabel!
     @IBOutlet weak var endVisitView: UIView!
-    @IBOutlet weak var endVisitLabel: UILabel!
+    @IBOutlet weak var endVisitLabel: UILabel!    
+    @IBOutlet weak var durationTimerLabel: UILabel!
     
     var pressAndHolding = false
     var endVisitViewNormalDiameter: CGFloat!
     var endVisitViewMaxDiameter: CGFloat!
     var endVisitViewScaleTimer: NSTimer!
     var visitDurationTimer: NSTimer!
+    let visitDurationFormatter = NSDateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         endVisitView.layer.cornerRadius =  endVisitView.bounds.width/2
         endVisitViewNormalDiameter = endVisitView.bounds.width
         endVisitViewMaxDiameter = 950
         
         endVisitViewScaleTimer = NSTimer.scheduledTimerWithTimeInterval(0.002, target: self, selector: "scaleEndVisitView", userInfo: nil, repeats: true)
+        
+        visitDurationFormatter.dateFormat = "hh:mm:ss"
+        updateTime()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +60,7 @@ class DuringVisitViewController: UIViewController {
         }
     }
 
-    // MARK: - My Functions
+    // MARK: - Custom Methods
     
     func growEndVisitView() {
         if endVisitView.bounds.width < endVisitViewMaxDiameter {
@@ -79,6 +86,10 @@ class DuringVisitViewController: UIViewController {
             endVisitViewScaleTimer.invalidate()
             performSegueWithIdentifier("endVisitSegue", sender: self)
         }
+    }
+    
+    func updateTime() {
+        durationTimerLabel.text = visitDurationFormatter.stringFromDate(NSDate())
     }
     
 //    func endVisit() {
