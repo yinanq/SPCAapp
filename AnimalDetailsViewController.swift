@@ -16,8 +16,8 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     var visitTitles = ["Walk", "In-Room Socialization", "Walk", "Walk", "In-Room Socialization"]
     var durationsAndStartTimes = ["20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM"]
     var volunteerInitials = ["initial: AB", "initial: AB", "initial: AB", "initial: AB", "initial: AB"]
-    var behaviorNotesContents = ["placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content"]
-    var symptomNotesContents = ["placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent"]
+    var behaviorNotesContents = ["placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content"]
+    var symptomNotesContents = ["placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent"]
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -30,6 +30,10 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
         
         visitsTableView.delegate = self
         visitsTableView.dataSource = self
+        
+        // table view cell dynamic height Tim code
+        visitsTableView.rowHeight = UITableViewAutomaticDimension
+        visitsTableView.estimatedRowHeight = 140
         
         navItem.title = animalName
         photoImageView.image = animalPhoto
@@ -55,10 +59,6 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - Table View
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return visitTitles.count
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
