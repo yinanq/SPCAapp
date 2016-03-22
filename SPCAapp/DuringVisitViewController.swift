@@ -23,8 +23,6 @@ class DuringVisitViewController: UIViewController {
     var endVisitViewMaxDiameter: CGFloat!
     // used for animation scale
     var endVisitViewScaleTimer: NSTimer!
-    // actual visit timer
-    var visitDurationTimer: NSTimer!
     
     var timer = NSTimer()
     var startTime = NSTimeInterval()
@@ -32,11 +30,13 @@ class DuringVisitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         endVisitView.layer.cornerRadius =  endVisitView.bounds.width/2
         endVisitViewNormalDiameter = endVisitView.bounds.width
         endVisitViewMaxDiameter = 950
         
         endVisitViewScaleTimer = NSTimer.scheduledTimerWithTimeInterval(0.002, target: self, selector: "scaleEndVisitView", userInfo: nil, repeats: true)
+
         let aSelector : Selector = "updateTime"
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
         startTime = NSDate.timeIntervalSinceReferenceDate()
@@ -77,7 +77,7 @@ class DuringVisitViewController: UIViewController {
         }
     }
 
-    // MARK: - My Functions
+    // MARK: - Custom Methods
     
     func growEndVisitView() {
         if endVisitView.bounds.width < endVisitViewMaxDiameter {
@@ -105,7 +105,7 @@ class DuringVisitViewController: UIViewController {
             performSegueWithIdentifier("endVisitSegue", sender: self)
         }
     }
-    
+
 //    func endVisit() {
 //        if endVisitView.bounds.width >= endVisitViewMaxDiameter {
 //            performSegueWithIdentifier("endVisitSegue", sender: self)
