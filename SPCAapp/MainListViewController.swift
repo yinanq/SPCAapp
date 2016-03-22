@@ -9,7 +9,7 @@
 import UIKit
 
 class MainListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var filtersButton: UIButton!
     @IBOutlet weak var shiftTimer: UILabel!
@@ -17,8 +17,10 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var mainlistTableView: UITableView!
     @IBOutlet weak var endShiftButtonView: UIView!
     
-    var timer: NSTimer?
-    let dateFormatter = NSDateFormatter()
+    // establishes timer
+    var timer = NSTimer()
+    var startTime = NSTimeInterval()
+    var shiftCounter = 0
     
     var animalNames = ["Steffi", "Kelly", "Cloud", "Gold", "Harlowe"]
     var animalPhotos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe")]
@@ -31,18 +33,28 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         mainlistTableView.delegate = self
         mainlistTableView.dataSource = self
         
-        dateFormatter.dateFormat = "hh:mm:ss"
-        updateTime()
-        
-        endShiftButtonView.layer.cornerRadius = 19
-        
+        // details came from tutorial - don't understand. must be in view did load to maintain timer.
         let aSelector : Selector = "updateTime"
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-//        startTime = NSDate.timeIntervalSinceReferenceDate()
+        startTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        endShiftButtonView.layer.cornerRadius = 19
     }
     
+    // calculates start time to be 00:00 and formats timer
     func updateTime() {
-        shiftTimer.text = dateFormatter.stringFromDate(NSDate())
+        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        var elapsedTime: NSTimeInterval = currentTime - startTime
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        // actually makes the timer appear
+        shiftTimer.text = "\(strMinutes):\(strSeconds)"
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,23 +96,27 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: - Navigation
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let cell = sender as! UITableViewCell
-        let indexPath = mainlistTableView.indexPathForCell(cell)!
+        if segue.identifier=="toPetPage" {
+            let cell = sender as! UITableViewCell
+            let indexPath = mainlistTableView.indexPathForCell(cell)!
+            
+            let animalName = animalNames[indexPath.row]
+            let animalPhoto = animalPhotos[indexPath.row]
+            
+            let destinationViewController = segue.destinationViewController as! AnimalDetailsViewController
+            
+            destinationViewController.animalName = animalName
+            destinationViewController.animalPhoto = animalPhoto
+        }
         
-        let animalName = animalNames[indexPath.row]
-        let animalPhoto = animalPhotos[indexPath.row]
-        
-        let destinationViewController = segue.destinationViewController as! AnimalDetailsViewController
-        
-        destinationViewController.animalName = animalName
-        destinationViewController.animalPhoto = animalPhoto
     }
     
+    // on tapping end shift button, timer recents and performs segue to start shift VC
     @IBAction func onEndShift(sender: AnyObject) {
-        timer?.invalidate()
+        timer.invalidate()
         performSegueWithIdentifier("endShift", sender: self)
     }
 }
