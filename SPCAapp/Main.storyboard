@@ -197,7 +197,7 @@
             <objects>
                 <viewController id="fT2-Tr-2PV" customClass="MainListViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wRd-xJ-th4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" id="0EH-0n-ns7">
@@ -369,7 +369,7 @@
             <objects>
                 <viewController id="2i8-Va-GL3" customClass="AnimalDetailsViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5df-it-Irn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" id="wpz-tR-Lmv">
@@ -535,27 +535,96 @@
             </objects>
             <point key="canvasLocation" x="1496" y="1806"/>
         </scene>
-        <!--View Controller-->
+        <!--During Visit View Controller-->
         <scene sceneID="pCn-Sg-Hd9">
             <objects>
-                <viewController id="udc-Ik-6Zk" sceneMemberID="viewController">
+                <viewController id="udc-Ik-6Zk" customClass="DuringVisitViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cQc-v7-3D5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Active Visit with Timer, Camera &amp; End Visit Button" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="eFF-Uc-jzJ">
-                                <rect key="frame" x="0.0" y="259" width="343" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="animalName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Uv-Pg-qjp">
+                                <rect key="frame" x="128" y="121" width="95" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="RFa-SW-WCX">
+                                <rect key="frame" x="20" y="89" width="85" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PTp-pN-Cu9">
+                                <rect key="frame" x="53" y="236" width="215" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="visitTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="92O-F6-hOo">
+                                <rect key="frame" x="41" y="41" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roomNumber" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Bg-8A-f8P">
+                                <rect key="frame" x="128" y="150" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="obb-xB-lyt">
+                                <rect key="frame" x="110" y="398" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eXl-ZL-iz6">
+                                        <rect key="frame" x="23" y="14" width="55" height="72"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">End
+Visit</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="71a-Dq-25U" appends="YES" id="aBo-QK-KYV"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ktT-8M-V35">
+                                <rect key="frame" x="13" y="214" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="EndVisitButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchUpInsideEndVisitButton:" destination="udc-Ik-6Zk" eventType="touchUpInside" id="aom-0I-UTk"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="animalName" destination="5Uv-Pg-qjp" id="UOP-f8-TQn"/>
+                        <outlet property="animalPhoto" destination="RFa-SW-WCX" id="29E-1j-dnx"/>
+                        <outlet property="endVisitView" destination="obb-xB-lyt" id="6UI-tT-8bg"/>
+                        <outlet property="roomNumber" destination="1Bg-8A-f8P" id="NHV-yB-3bz"/>
+                        <outlet property="visitTitle" destination="92O-F6-hOo" id="08h-nk-XtR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfg-0p-sea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.0" id="71a-Dq-25U">
+                    <connections>
+                        <action selector="didLongPressEndVisitView:" destination="udc-Ik-6Zk" id="hT7-LY-mqm"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="C8i-Zb-P3s"/>
             </objects>
-            <point key="canvasLocation" x="1830.3999999999999" y="1803.4000000000001"/>
+            <point key="canvasLocation" x="1830" y="1803"/>
         </scene>
         <!--Visit Summary View Controller-->
         <scene sceneID="z10-ZV-i6i">
@@ -700,7 +769,7 @@
         <image name="settingsButton" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bUo-Fg-FIQ"/>
-        <segue reference="Dqr-Ly-WLI"/>
+        <segue reference="cmv-l6-hZX"/>
+        <segue reference="rXq-eF-Raa"/>
     </inferredMetricsTieBreakers>
 </document>
