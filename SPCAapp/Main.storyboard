@@ -539,7 +539,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PTp-pN-Cu9">
                                 <rect key="frame" x="53" y="236" width="215" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="80"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -584,6 +584,7 @@ Visit</string>
                         <outlet property="endVisitLabel" destination="eXl-ZL-iz6" id="aUm-F0-mPu"/>
                         <outlet property="endVisitView" destination="obb-xB-lyt" id="6UI-tT-8bg"/>
                         <outlet property="roomNumber" destination="1Bg-8A-f8P" id="NHV-yB-3bz"/>
+                        <outlet property="visitDurationLabel" destination="PTp-pN-Cu9" id="Bxd-Or-Ywx"/>
                         <outlet property="visitTitle" destination="92O-F6-hOo" id="08h-nk-XtR"/>
                         <segue destination="Pwd-PL-GMB" kind="modal" identifier="endVisitSegue" id="Ysr-IY-fJg"/>
                     </connections>

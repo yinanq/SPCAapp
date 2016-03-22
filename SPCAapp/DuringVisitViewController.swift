@@ -16,12 +16,19 @@ class DuringVisitViewController: UIViewController {
     @IBOutlet weak var roomNumber: UILabel!
     @IBOutlet weak var endVisitView: UIView!
     @IBOutlet weak var endVisitLabel: UILabel!
+    @IBOutlet weak var visitDurationLabel: UILabel!
     
     var pressAndHolding = false
     var endVisitViewNormalDiameter: CGFloat!
     var endVisitViewMaxDiameter: CGFloat!
+    // used for animation scale
     var endVisitViewScaleTimer: NSTimer!
+    // actual visit timer
     var visitDurationTimer: NSTimer!
+    
+    var timer = NSTimer()
+    var startTime = NSTimeInterval()
+    var shiftCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +37,28 @@ class DuringVisitViewController: UIViewController {
         endVisitViewMaxDiameter = 950
         
         endVisitViewScaleTimer = NSTimer.scheduledTimerWithTimeInterval(0.002, target: self, selector: "scaleEndVisitView", userInfo: nil, repeats: true)
+        let aSelector : Selector = "updateTime"
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        startTime = NSDate.timeIntervalSinceReferenceDate()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateTime() {
+        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        var elapsedTime: NSTimeInterval = currentTime - startTime
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        visitDurationLabel.text = "\(strMinutes):\(strSeconds)"
     }
     
     @IBAction func didLongPressEndVisitView(sender: UILongPressGestureRecognizer) {
@@ -77,6 +101,7 @@ class DuringVisitViewController: UIViewController {
         }
         if endVisitView.bounds.width >= endVisitViewMaxDiameter {
             endVisitViewScaleTimer.invalidate()
+            timer.invalidate()
             performSegueWithIdentifier("endVisitSegue", sender: self)
         }
     }
