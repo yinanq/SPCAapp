@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -598,24 +599,28 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obb-xB-lyt">
                                 <rect key="frame" x="110" y="398" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXl-ZL-iz6">
+                                        <rect key="frame" x="22" y="14" width="55" height="72"/>
+                                        <string key="text">End
+Visit</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="eXl-ZL-iz6" firstAttribute="centerX" secondItem="obb-xB-lyt" secondAttribute="centerX" id="Cen-HC-PVV"/>
                                     <constraint firstAttribute="width" constant="100" id="HJh-Uq-6Iu"/>
                                     <constraint firstAttribute="height" constant="100" id="IPD-ht-Urp"/>
+                                    <constraint firstItem="eXl-ZL-iz6" firstAttribute="centerY" secondItem="obb-xB-lyt" secondAttribute="centerY" id="h7E-5O-Qff"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="71a-Dq-25U" appends="YES" id="aBo-QK-KYV"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXl-ZL-iz6">
-                                <rect key="frame" x="133" y="411" width="55" height="72"/>
-                                <string key="text">End
-Visit</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

@@ -46,7 +46,7 @@ class DuringVisitViewController: UIViewController {
         
         endVisitView.layer.cornerRadius =  endVisitView.bounds.width/2
         endVisitViewNormalDiameter = endVisitView.bounds.width
-        endVisitViewMaxDiameter = 950
+        endVisitViewMaxDiameter = 1200
         
         endVisitViewScaleTimer = NSTimer.scheduledTimerWithTimeInterval(0.002, target: self, selector: "scaleEndVisitView", userInfo: nil, repeats: true)
 
