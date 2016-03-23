@@ -221,7 +221,7 @@
         <!--All Dogs-->
         <scene sceneID="J4g-K8-PF8">
             <objects>
-                <viewController id="fT2-Tr-2PV" customClass="MainListViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainListViewController" id="fT2-Tr-2PV" customClass="MainListViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eWy-Qv-vwb"/>
                         <viewControllerLayoutGuide type="bottom" id="Ycp-9T-2PW"/>

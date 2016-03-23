@@ -17,6 +17,12 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var mainlistTableView: UITableView!
     @IBOutlet weak var endShiftButtonView: UIView!
     
+    // data passed from VisitSummaryViewController
+    var newlyVisitedAnimal: String!
+    var newBehaviorNotes: String!
+    var newSymptomNotes: String!
+    var hasNewVisitToAdd = false
+    
     // establishes timer
     var mainShiftTimer = NSTimer()
     var startTime = NSTimeInterval()
@@ -110,6 +116,15 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
             
             destinationViewController.animalName = animalName
             destinationViewController.animalPhoto = animalPhoto
+            
+            // pass new visit notes if cell is of newly visited animal
+            if hasNewVisitToAdd == true {
+                if newlyVisitedAnimal == animalName {
+                    destinationViewController.newBehaviorNotes = newBehaviorNotes
+                    destinationViewController.newSymptomNotes = newSymptomNotes
+                    destinationViewController.hasNewVisitToAdd = true
+                }
+            }
         }
         
     }

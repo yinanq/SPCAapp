@@ -10,19 +10,23 @@ import UIKit
 
 class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // passed data from table view based on which cell is opened
     var animalName: String!
     var animalPhoto: UIImage!
     
+    // passed data from new visit
+    var newVisitTitle = "newVisitTitle"
+    var newVisitDurationAndStartTime = "newVisitDuratinAnd"
+    var newBehaviorNotes: String!
+    var newSymptomNotes: String!
+    
+    // local data
     var visitTitles = ["Walk", "Socialization", "Walk", "Walk", "Socialization"]
-    var newVisitTitle: String!
     var durationsAndStartTimes = ["20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM"]
-    var newVisitDurationAndStartTime: String!
     var volunteerInitials = ["initial: AB", "initial: CD", "initial: EF", "initial: GH", "initial: IJ"]
     let userInitials = "YQ"
     var behaviorNotesContents = ["placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content", "placehoder behavior notes content"]
-    var newVisitBehaviorNotesContent: String!
     var symptomNotesContents = ["placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent", "placehoder symptom notes contnent"]
-    var newVisitSymptomNotesContent: String!
     var hasNewVisitToAdd = false
     
     @IBOutlet weak var navItem: UINavigationItem!
@@ -35,12 +39,13 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // add new cell for new visit if any
         if hasNewVisitToAdd == true {
             visitTitles.insert(newVisitTitle, atIndex: 0)
             durationsAndStartTimes.insert(newVisitDurationAndStartTime, atIndex: 0)
             volunteerInitials.insert(userInitials, atIndex: 0)
-            behaviorNotesContents.insert(newVisitBehaviorNotesContent, atIndex: 0)
-            symptomNotesContents.insert(newVisitSymptomNotesContent, atIndex: 0)
+            behaviorNotesContents.insert(newBehaviorNotes, atIndex: 0)
+            symptomNotesContents.insert(newSymptomNotes, atIndex: 0)
         }
         
         visitsTableView.delegate = self

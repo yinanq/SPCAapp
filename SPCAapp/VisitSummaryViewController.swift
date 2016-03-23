@@ -98,14 +98,38 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
 //        }
 //    }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "fromVisitSummaryForm" {
+            // Get the new view controller using segue.destinationViewController.
+            
+//            let destinationViewController = segue.destinationViewController as! MainListViewController
+            // http://stackoverflow.com/questions/30209626/could-not-cast-value-of-type-uinavigationcontroller
+            let destinationViewControllerParent = segue.destinationViewController as! UINavigationController
+            let destinationViewController = destinationViewControllerParent.topViewController as! MainListViewController
+            
+            // Pass the selected object to the new view controller.
+            var behaviorNotes: String!
+            if behaviorTextField.text == nil {
+                behaviorNotes = "N/A"
+            } else {
+                behaviorNotes = ("\(behaviorTextField.text!)")
+            }
+            var symptomNotes: String!
+            if symptomTextField.text == nil {
+                symptomNotes = "N/A"
+            } else {
+                symptomNotes = ("\(symptomTextField.text!)")
+            }
+            
+            destinationViewController.hasNewVisitToAdd = true
+            destinationViewController.newlyVisitedAnimal = passedAnimalName
+            destinationViewController.newBehaviorNotes = behaviorNotes
+            destinationViewController.newSymptomNotes = symptomNotes
+        }
     }
-    */
 
 }
