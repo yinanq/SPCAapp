@@ -17,6 +17,12 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var mainlistTableView: UITableView!
     @IBOutlet weak var endShiftButtonView: UIView!
     
+    // data passed from VisitSummaryViewController
+    var newlyVisitedAnimal: String!
+    var newBehaviorNotes: String!
+    var newSymptomNotes: String!
+    var hasNewVisitToAdd = false
+    
     // establishes timer
     var mainShiftTimer = NSTimer()
     var startTime = NSTimeInterval()
@@ -29,6 +35,36 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // using stupid manual code, if new visit happened move newly visited dog to bottom in table view list ordered from least to most recently visited dogs
+        if hasNewVisitToAdd == true {
+            if newlyVisitedAnimal == "Steffi" {
+                animalNames = ["Kelly", "Cloud", "Gold", "Harlowe", "Steffi"]
+                animalPhotos = [UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe"), UIImage(named: "photoOfDogSteffi")]
+                colorCodeColors = [greenLevelColor,yellowLevelColor,puppiesColor,targetColor,greenLevelColor]
+                hoursSinceLastVist = [3.2, 1.9, 0.7, 0.2, 0]
+            } else if newlyVisitedAnimal == "Kelly" {
+                animalNames = ["Steffi", "Cloud", "Gold", "Harlowe", "Kelly"]
+                animalPhotos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe"), UIImage(named: "photoOfDogKelly")]
+                colorCodeColors = [greenLevelColor,yellowLevelColor,puppiesColor,targetColor,greenLevelColor]
+                hoursSinceLastVist = [3.6, 1.9, 0.7, 0.2, 0]
+            } else if newlyVisitedAnimal == "Cloud" {
+                animalNames = ["Steffi", "Kelly", "Gold", "Harlowe", "Cloud"]
+                animalPhotos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe"), UIImage(named: "photoOfDogCloud")]
+                colorCodeColors = [greenLevelColor,greenLevelColor,puppiesColor,targetColor,yellowLevelColor]
+                hoursSinceLastVist = [3.6, 3.2, 0.7, 0.2, 0]
+            } else if newlyVisitedAnimal == "Gold" {
+                animalNames = ["Steffi", "Kelly", "Cloud", "Harlowe", "Gold"]
+                animalPhotos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogHarlowe"), UIImage(named: "photoOfDogGold")]
+                colorCodeColors = [greenLevelColor,greenLevelColor,yellowLevelColor,targetColor,puppiesColor]
+                hoursSinceLastVist = [3.6, 3.2, 1.9, 0.2, 0]
+            } else if newlyVisitedAnimal == "Harlowe" {
+                animalNames = ["Steffi", "Kelly", "Cloud", "Gold", "Harlowe"]
+                animalPhotos = [UIImage(named: "photoOfDogSteffi"), UIImage(named: "photoOfDogKelly"), UIImage(named: "photoOfDogCloud"), UIImage(named: "photoOfDogGold"), UIImage(named: "photoOfDogHarlowe")]
+                colorCodeColors = [greenLevelColor,greenLevelColor,yellowLevelColor,puppiesColor,targetColor]
+                hoursSinceLastVist = [3.6, 3.2, 1.9, 0.7, 0]
+            }
+        }
         
         mainlistTableView.delegate = self
         mainlistTableView.dataSource = self
@@ -110,6 +146,15 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
             
             destinationViewController.animalName = animalName
             destinationViewController.animalPhoto = animalPhoto
+            
+            // pass new visit notes if cell is of newly visited animal
+            if hasNewVisitToAdd == true {
+                if newlyVisitedAnimal == animalName {
+                    destinationViewController.newBehaviorNotes = newBehaviorNotes
+                    destinationViewController.newSymptomNotes = newSymptomNotes
+                    destinationViewController.hasNewVisitToAdd = true
+                }
+            }
         }
         
     }
