@@ -128,7 +128,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="162" y="1029"/>
+            <point key="canvasLocation" x="-538" y="1053"/>
         </scene>
         <!--Start Shift View Controller-->
         <scene sceneID="Cr6-mq-mxE">
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xED-as-Bjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="161" y="1754"/>
+            <point key="canvasLocation" x="85" y="1412"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tn1-A1-tFl">
@@ -197,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPA-lP-F9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628" y="1754"/>
+            <point key="canvasLocation" x="944" y="1214"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="OZw-Fw-Ob6">
@@ -242,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjg-qz-9Hh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="1754"/>
+            <point key="canvasLocation" x="1538" y="1214"/>
         </scene>
         <!--All Dogs-->
         <scene sceneID="J4g-K8-PF8">
@@ -389,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xr-TR-Ckw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628" y="2472"/>
+            <point key="canvasLocation" x="194" y="3070"/>
         </scene>
         <!--Animal Details View Controller-->
         <scene sceneID="iYc-z4-riq">
@@ -551,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxt-bO-hYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="2472"/>
+            <point key="canvasLocation" x="1022" y="3106"/>
         </scene>
         <!--During Visit View Controller-->
         <scene sceneID="pCn-Sg-Hd9">
@@ -663,7 +663,7 @@ Visit</string>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1556" y="2472"/>
+            <point key="canvasLocation" x="1636" y="2212"/>
         </scene>
         <!--Visit Summary View Controller-->
         <scene sceneID="z10-ZV-i6i">
@@ -757,7 +757,7 @@ Visit</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2004" y="2472"/>
+            <point key="canvasLocation" x="2314" y="2566"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y61-ml-8bh">
@@ -786,7 +786,7 @@ Visit</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EC-Pq-ChE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="2472"/>
+            <point key="canvasLocation" x="-486" y="2898"/>
         </scene>
     </scenes>
     <resources>

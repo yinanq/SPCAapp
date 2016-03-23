@@ -81,6 +81,7 @@ class StartShiftViewController: UIViewController, UIPickerViewDelegate, UIPicker
             showAlertWithTitle("Location is Required", andMessage: "Please select a location.")
         }
         else {
+            Shift.startTime = NSDate()
             performSegueWithIdentifier("fromStartShift", sender: self)
         }
         

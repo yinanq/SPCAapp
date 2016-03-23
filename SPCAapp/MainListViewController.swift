@@ -8,6 +8,28 @@
 
 import UIKit
 
+class Shift {
+    static var startTime : NSDate = NSDate()
+    
+    static func elapsedTime(now: NSDate) -> NSTimeInterval {
+        return now.timeIntervalSinceDate(self.startTime)
+    }
+    
+    static func formattedElapsedTime() -> String {
+        var elapsed = self.elapsedTime(NSDate())
+        let minutes = UInt8(elapsed / 60.0)
+        elapsed -= (NSTimeInterval(minutes) * 60)
+        let seconds = UInt8(elapsed)
+        elapsed -= NSTimeInterval(seconds)
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        // actually makes the timer appear
+        return "\(strMinutes):\(strSeconds)"
+    }
+}
+
 class MainListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var settingsButton: UIButton!
@@ -72,25 +94,12 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         // details came from tutorial - don't understand. must be in view did load to maintain timer.
         let aSelector : Selector = "updateTime"
         mainShiftTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-        startTime = NSDate.timeIntervalSinceReferenceDate()
-        
         endShiftButtonView.layer.cornerRadius = 19
     }
     
     // calculates start time to be 00:00 and formats timer
     func updateTime() {
-        let currentTime = NSDate.timeIntervalSinceReferenceDate()
-        var elapsedTime: NSTimeInterval = currentTime - startTime
-        let minutes = UInt8(elapsedTime / 60.0)
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
-        let seconds = UInt8(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
-        
-        let strMinutes = String(format: "%02d", minutes)
-        let strSeconds = String(format: "%02d", seconds)
-        
-        // actually makes the timer appear
-        shiftTimer.text = "\(strMinutes):\(strSeconds)"
+        shiftTimer.text = Shift.formattedElapsedTime()
     }
     
     override func didReceiveMemoryWarning() {
