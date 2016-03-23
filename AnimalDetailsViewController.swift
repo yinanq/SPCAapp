@@ -30,6 +30,7 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var visitsTableView: UITableView!
     @IBOutlet weak var photoContainerView: UIView!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var roomNumber: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,14 +91,21 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        print("prepareForSegue from AnimalDetails to DuringVisit")
+        
         // Get the new view controller using segue.destinationViewController.
+        let destinationViewController = segue.destinationViewController as! DuringVisitViewController
+        
         // Pass the selected object to the new view controller.
+        destinationViewController.passedVisitTitle = "Walk"
+        destinationViewController.passedAnimalPhoto = animalPhoto
+        destinationViewController.passedAnimalName = animalName
+        destinationViewController.passedRoomNumber = roomNumber.text
     }
-    */
-
+    
 }

@@ -526,6 +526,7 @@
                         <outlet property="navItem" destination="D4I-2N-d0p" id="ONT-Lc-5Jm"/>
                         <outlet property="photoContainerView" destination="Go7-eH-p6q" id="yD1-nq-dF4"/>
                         <outlet property="photoImageView" destination="9xv-1F-bDb" id="O5z-uw-Wjg"/>
+                        <outlet property="roomNumber" destination="1JG-tu-44P" id="vzn-qo-SHg"/>
                         <outlet property="segmentedControl" destination="7Yr-eW-rKl" id="xtS-BB-r9S"/>
                         <outlet property="visitsTableView" destination="wpz-tR-Lmv" id="ead-6E-27M"/>
                     </connections>

@@ -32,6 +32,12 @@ class DuringVisitViewController: UIViewController {
     var startTime = NSTimeInterval()
     var shiftCounter = 0
     
+    // data to be passed from AnimalDetailsViewController
+    var passedVisitTitle: String!
+    var passedAnimalPhoto: UIImage!
+    var passedAnimalName: String!
+    var passedRoomNumber: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +50,12 @@ class DuringVisitViewController: UIViewController {
         let aSelector : Selector = "updateTime"
         visitTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
         startTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        // apply data passed from AnimalDetailsViewController
+        visitTitle.text = passedVisitTitle
+        animalPhoto.image = passedAnimalPhoto
+        animalName.text = passedAnimalName
+        roomNumber.text = passedRoomNumber
     }
 
     override func didReceiveMemoryWarning() {
