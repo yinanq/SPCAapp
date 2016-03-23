@@ -28,7 +28,7 @@ class DuringVisitViewController: UIViewController {
     // used for animation scale
     var endVisitViewScaleTimer: NSTimer!
     
-    var timer = NSTimer()
+    var visitTimer = NSTimer()
     var startTime = NSTimeInterval()
     var shiftCounter = 0
     
@@ -42,7 +42,7 @@ class DuringVisitViewController: UIViewController {
         endVisitViewScaleTimer = NSTimer.scheduledTimerWithTimeInterval(0.002, target: self, selector: "scaleEndVisitView", userInfo: nil, repeats: true)
 
         let aSelector : Selector = "updateTime"
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        visitTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
         startTime = NSDate.timeIntervalSinceReferenceDate()
     }
 
@@ -121,7 +121,7 @@ class DuringVisitViewController: UIViewController {
         }
         if endVisitView.bounds.width >= endVisitViewMaxDiameter {
             endVisitViewScaleTimer.invalidate()
-            timer.invalidate()
+            visitTimer.invalidate()
             performSegueWithIdentifier("endVisitSegue", sender: self)
         }
     }

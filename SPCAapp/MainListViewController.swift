@@ -18,7 +18,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var endShiftButtonView: UIView!
     
     // establishes timer
-    var timer = NSTimer()
+    var mainShiftTimer = NSTimer()
     var startTime = NSTimeInterval()
     var shiftCounter = 0
     
@@ -35,7 +35,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // details came from tutorial - don't understand. must be in view did load to maintain timer.
         let aSelector : Selector = "updateTime"
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        mainShiftTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
         startTime = NSDate.timeIntervalSinceReferenceDate()
         
         endShiftButtonView.layer.cornerRadius = 19
@@ -116,7 +116,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // on tapping end shift button, timer recents and performs segue to start shift VC
     @IBAction func onEndShift(sender: AnyObject) {
-        timer.invalidate()
+        mainShiftTimer.invalidate()
         performSegueWithIdentifier("endShift", sender: self)
     }
 }
