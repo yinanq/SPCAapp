@@ -14,11 +14,21 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
     @IBOutlet weak var symptomTextField: UITextField!
     @IBOutlet weak var visitSummaryScrollView: UIScrollView!
     
-    // TODO:
-//    var visi
+    var passedAnimalPhoto: UIImage!
+    @IBOutlet weak var animalPhoto: UIImageView!
+    var passedAnimalName: String!
+    @IBOutlet weak var animalName: UILabel!
+    var passedDuration: String!
+    @IBOutlet weak var duration: UILabel!
+//    var passedStartTime: String!
+//    @IBOutlet weak var startTime: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        animalPhoto.image = passedAnimalPhoto
+        animalName.text = passedAnimalName
+        duration.text = passedDuration
         
         visitSummaryScrollView.delegate = self
         visitSummaryScrollView.contentSize = CGSize (width: 320, height: 600)

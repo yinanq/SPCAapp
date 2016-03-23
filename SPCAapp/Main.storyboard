@@ -540,6 +540,7 @@
                         <outlet property="navItem" destination="D4I-2N-d0p" id="ONT-Lc-5Jm"/>
                         <outlet property="photoContainerView" destination="Go7-eH-p6q" id="yD1-nq-dF4"/>
                         <outlet property="photoImageView" destination="9xv-1F-bDb" id="O5z-uw-Wjg"/>
+                        <outlet property="roomNumber" destination="1JG-tu-44P" id="vzn-qo-SHg"/>
                         <outlet property="segmentedControl" destination="7Yr-eW-rKl" id="xtS-BB-r9S"/>
                         <outlet property="visitsTableView" destination="wpz-tR-Lmv" id="ead-6E-27M"/>
                     </connections>
@@ -566,7 +567,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-pN-Cu9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-pN-Cu9">
                                 <rect key="frame" x="53" y="236" width="215" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="CHO-Ae-S6h"/>
@@ -588,6 +589,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFa-SW-WCX">
+                                <rect key="frame" x="20" y="89" width="85" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="RNV-q4-tT9"/>
+                                    <constraint firstAttribute="width" constant="85" id="yc8-3Z-lZ4"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obb-xB-lyt">
                                 <rect key="frame" x="110" y="398" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -608,13 +616,6 @@ Visit</string>
                                 <color key="textColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFa-SW-WCX">
-                                <rect key="frame" x="20" y="89" width="85" height="82"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="82" id="RNV-q4-tT9"/>
-                                    <constraint firstAttribute="width" constant="85" id="yc8-3Z-lZ4"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.68235294120000001" green="0.22352941179999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -711,18 +712,6 @@ Visit</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time of Visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7l7-ZK-fkM">
-                                        <rect key="frame" x="122" y="57" width="138" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UR during visit?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZt-CZ-gjQ">
-                                        <rect key="frame" x="122" y="76" width="138" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kiH-Af-ytN">
@@ -745,7 +734,10 @@ Visit</string>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="animalName" destination="9xj-pd-sRB" id="LJl-uN-spy"/>
+                        <outlet property="animalPhoto" destination="9Ol-qS-ZD2" id="E5R-lg-KKg"/>
                         <outlet property="behaviorTextField" destination="iNJ-Bn-I8H" id="Xgj-SM-O1f"/>
+                        <outlet property="duration" destination="7Ss-1b-yc2" id="l8h-5X-Otf"/>
                         <outlet property="symptomTextField" destination="Ans-ag-pQZ" id="FIV-ez-5jU"/>
                         <outlet property="visitSummaryScrollView" destination="zPe-kW-Kvq" id="SOp-hT-6H0"/>
                     </connections>
