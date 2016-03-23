@@ -11,6 +11,7 @@
 		3A3B43571C9F5B4100135173 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3B43561C9F5B4100135173 /* Main.storyboard */; };
 		3A96CB731C8E862800ED511B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96CB721C8E862800ED511B /* LoginViewController.swift */; };
 		3A96CB761C8E8DF100ED511B /* Login2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96CB751C8E8DF100ED511B /* Login2ViewController.swift */; };
+		3A9C34611CA315E600DF28E6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C34601CA315E600DF28E6 /* FilterViewController.swift */; };
 		3AD48C0C1C9630B800A9F994 /* VisitSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD48C0B1C9630B800A9F994 /* VisitSummaryViewController.swift */; };
 		E1754BB71C96944800745141 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1754BB61C96944800745141 /* Constants.swift */; };
 		E1E6B19B1C89723E00965F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6B19A1C89723E00965F90 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		3A3B43561C9F5B4100135173 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3A96CB721C8E862800ED511B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A96CB751C8E8DF100ED511B /* Login2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login2ViewController.swift; sourceTree = "<group>"; };
+		3A9C34601CA315E600DF28E6 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3AD48C0B1C9630B800A9F994 /* VisitSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitSummaryViewController.swift; sourceTree = "<group>"; };
 		E1754BB61C96944800745141 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E1E6B1971C89723E00965F90 /* SPCAapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPCAapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 				F6BBBAF91C97B35600D4DD5F /* AnimalDetailsViewController.swift */,
 				3AD48C0B1C9630B800A9F994 /* VisitSummaryViewController.swift */,
 				F66B81711C9F721B005F7A39 /* DuringVisitViewController.swift */,
+				3A9C34601CA315E600DF28E6 /* FilterViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				F6AA2BC41C9628010002DAD7 /* AnimalCell.swift in Sources */,
 				F66B81721C9F721B005F7A39 /* DuringVisitViewController.swift in Sources */,
 				F67DEA761C9F42760070DA19 /* VisitCell.swift in Sources */,
+				3A9C34611CA315E600DF28E6 /* FilterViewController.swift in Sources */,
 				F61610641C9607BA00B22594 /* MainListViewController.swift in Sources */,
 				3A0952061C9F440C004C761F /* StartShiftViewController.swift in Sources */,
 				3A96CB761C8E8DF100ED511B /* Login2ViewController.swift in Sources */,

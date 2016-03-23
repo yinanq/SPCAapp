@@ -19,6 +19,7 @@ class Login2ViewController: UIViewController, UITextFieldDelegate {
     var buttonViewInitialY: CGFloat!
     var buttonviewOffset: CGFloat!
     
+    @IBOutlet weak var loginViewBottomConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,17 +47,15 @@ class Login2ViewController: UIViewController, UITextFieldDelegate {
     func keyboardWillShow(notification: NSNotification!) {
         let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
         
-        if  loginButtonView.frame.origin.y != buttonViewInitialY - keyboardSize!.height {
-            loginButtonView.frame.origin.y = buttonViewInitialY - keyboardSize!.height
-        }
+        self.loginViewBottomConstraint.constant = keyboardSize!.height
     }
     
     // function for when the keyboard hides
     func keyboardWillHide(notification: NSNotification!) {
-        if  self.loginButtonView.frame.origin.y != self.buttonViewInitialY {
-            self.loginButtonView.frame.origin.y = buttonViewInitialY
-        }
+        
+        self.loginViewBottomConstraint.constant = 0
     }
+    
     // function to get the return key to move to the next text field
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         

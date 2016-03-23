@@ -164,4 +164,10 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         mainShiftTimer.invalidate()
         performSegueWithIdentifier("endShift", sender: self)
     }
+    
+    @IBAction func onFilterButton(sender: AnyObject) {
+        performSegueWithIdentifier("toFilterList", sender: self)
+        
+    }
+    
 }

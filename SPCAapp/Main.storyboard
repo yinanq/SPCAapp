@@ -60,16 +60,10 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-Xj-cIK">
-                                <rect key="frame" x="35" y="187" width="250" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
-                            </textField>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="POm-dn-5uH">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POm-dn-5uH">
                                 <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL0-Qh-Zqz">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL0-Qh-Zqz">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                         <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
@@ -87,20 +81,29 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="JL0-Qh-Zqz" firstAttribute="centerY" secondItem="POm-dn-5uH" secondAttribute="centerY" id="RBF-mB-rMj"/>
+                                    <constraint firstItem="JL0-Qh-Zqz" firstAttribute="centerX" secondItem="POm-dn-5uH" secondAttribute="centerX" id="WHU-tq-ZGV"/>
                                     <constraint firstAttribute="height" constant="60" id="gge-N4-dPL"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-Xj-cIK">
+                                <rect key="frame" x="35" y="187" width="250" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="OLk-Xj-cIK" firstAttribute="top" secondItem="Fbh-Ci-2aA" secondAttribute="bottom" constant="16" id="0Vi-Hp-ZY0"/>
-                            <constraint firstItem="POm-dn-5uH" firstAttribute="leading" secondItem="XNF-6b-YHS" secondAttribute="leadingMargin" constant="-20" id="5mY-Q1-jLI"/>
                             <constraint firstItem="Fbh-Ci-2aA" firstAttribute="leading" secondItem="XNF-6b-YHS" secondAttribute="leadingMargin" constant="15" id="EGQ-nc-oxh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="POm-dn-5uH" secondAttribute="trailing" constant="-20" id="Gec-qs-lW1"/>
+                            <constraint firstAttribute="trailing" secondItem="POm-dn-5uH" secondAttribute="trailing" id="G7i-K1-6In"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fbh-Ci-2aA" secondAttribute="trailing" constant="15" id="NSh-eh-ina"/>
                             <constraint firstItem="Fbh-Ci-2aA" firstAttribute="top" secondItem="w0L-op-fs9" secondAttribute="bottom" constant="120" id="OUY-nD-5Rz"/>
+                            <constraint firstItem="FP8-Ac-toa" firstAttribute="top" secondItem="POm-dn-5uH" secondAttribute="bottom" id="PiU-II-gxn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OLk-Xj-cIK" secondAttribute="trailing" constant="15" id="YQ9-n3-Boh"/>
+                            <constraint firstItem="POm-dn-5uH" firstAttribute="leading" secondItem="XNF-6b-YHS" secondAttribute="leading" id="nA9-mt-YVl"/>
                             <constraint firstItem="OLk-Xj-cIK" firstAttribute="top" secondItem="Fbh-Ci-2aA" secondAttribute="bottom" constant="16" id="vCC-bG-oTE"/>
                             <constraint firstItem="OLk-Xj-cIK" firstAttribute="leading" secondItem="XNF-6b-YHS" secondAttribute="leadingMargin" constant="15" id="z2b-Y4-WFm"/>
                         </constraints>
@@ -112,6 +115,7 @@
                         <outlet property="emailTextField" destination="Fbh-Ci-2aA" id="tNs-mj-HGB"/>
                         <outlet property="loginButton" destination="JL0-Qh-Zqz" id="aJ6-vx-svl"/>
                         <outlet property="loginButtonView" destination="POm-dn-5uH" id="SYk-2u-JW0"/>
+                        <outlet property="loginViewBottomConstraint" destination="PiU-II-gxn" id="DNk-7j-58I"/>
                         <outlet property="passwordTextField" destination="OLk-Xj-cIK" id="8jo-Ie-wMM"/>
                         <outlet property="signInActivityIndicator" destination="OTp-2s-gvR" id="aV1-7V-Ik6"/>
                         <segue destination="Ghl-wv-Kdi" kind="modal" identifier="logInSegue" id="rXq-eF-Raa"/>
@@ -193,12 +197,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPA-lP-F9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568" y="1721"/>
+            <point key="canvasLocation" x="628" y="1754"/>
         </scene>
-        <!--View Controller-->
+        <!--Filter View Controller-->
         <scene sceneID="OZw-Fw-Ob6">
             <objects>
-                <viewController id="4cs-eb-Q65" sceneMemberID="viewController">
+                <viewController id="4cs-eb-Q65" customClass="FilterViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iwd-ll-oS2"/>
                         <viewControllerLayoutGuide type="bottom" id="feF-Tg-11D"/>
@@ -207,18 +211,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Filter List" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZRt-Sk-JdC">
-                                <rect key="frame" x="118" y="258" width="84" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbu-YV-Ojq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="iphone 5 list-filters" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-M3-GkS">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="724"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Utp-Y5-7ZE">
+                                        <rect key="frame" x="8" y="15" width="72" height="31"/>
+                                        <connections>
+                                            <action selector="doneButton:" destination="4cs-eb-Q65" eventType="touchUpInside" id="wQg-fi-K7n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx0-er-AKz">
+                                        <rect key="frame" x="252" y="15" width="60" height="31"/>
+                                        <connections>
+                                            <action selector="doneButton:" destination="4cs-eb-Q65" eventType="touchUpInside" id="665-oZ-60E"/>
+                                            <segue destination="wTN-1q-c4M" kind="modal" identifier="backToAllDogs" id="nLM-do-UNq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="filterImageView" destination="3Jz-M3-GkS" id="ZRt-Kg-9hG"/>
+                        <outlet property="filterScrollView" destination="xbu-YV-Ojq" id="zEQ-qW-3GX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjg-qz-9Hh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="1721"/>
+            <point key="canvasLocation" x="1092" y="1754"/>
         </scene>
         <!--All Dogs-->
         <scene sceneID="J4g-K8-PF8">
@@ -343,6 +367,9 @@
                                 <rect key="frame" x="279" y="9" width="25" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="filtersButton"/>
+                                <connections>
+                                    <action selector="onFilterButton:" destination="fT2-Tr-2PV" eventType="touchUpInside" id="tdc-rx-PPi"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -356,13 +383,13 @@
                         <outlet property="shiftTimer" destination="lBF-8q-2LL" id="yil-mg-kKa"/>
                         <outlet property="shiftTimerView" destination="3w2-QI-CC2" id="I4m-ed-Pxj"/>
                         <segue destination="z1i-eR-Ydq" kind="modal" id="IsA-6a-q3w"/>
-                        <segue destination="4cs-eb-Q65" kind="modal" id="qqy-SC-XNi"/>
+                        <segue destination="4cs-eb-Q65" kind="modal" identifier="toFilterList" id="qqy-SC-XNi"/>
                         <segue destination="Ghl-wv-Kdi" kind="modal" identifier="endShift" id="Dqr-Ly-WLI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xr-TR-Ckw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="2437"/>
+            <point key="canvasLocation" x="628" y="2472"/>
         </scene>
         <!--Animal Details View Controller-->
         <scene sceneID="iYc-z4-riq">
@@ -524,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxt-bO-hYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226" y="2437"/>
+            <point key="canvasLocation" x="1092" y="2472"/>
         </scene>
         <!--During Visit View Controller-->
         <scene sceneID="pCn-Sg-Hd9">
@@ -539,12 +566,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="animalName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uv-Pg-qjp">
-                                <rect key="frame" x="128" y="121" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="128" y="121" width="125" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-pN-Cu9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-pN-Cu9">
                                 <rect key="frame" x="53" y="236" width="215" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="CHO-Ae-S6h"/>
@@ -562,7 +589,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="roomNumber" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bg-8A-f8P">
                                 <rect key="frame" x="128" y="150" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -636,7 +663,7 @@ Visit</string>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1717" y="1806"/>
+            <point key="canvasLocation" x="1556" y="2472"/>
         </scene>
         <!--Visit Summary View Controller-->
         <scene sceneID="z10-ZV-i6i">
@@ -655,12 +682,12 @@ Visit</string>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Behavior Notes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmw-KL-PmL">
                                         <rect key="frame" x="20" y="102" width="226" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" text="AnimalName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xj-pd-sRB">
                                         <rect key="frame" x="120" y="11" width="181" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -669,7 +696,7 @@ Visit</string>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Symptom Notes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xvm-th-yQf">
                                         <rect key="frame" x="20" y="232" width="226" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iNJ-Bn-I8H">
@@ -682,14 +709,14 @@ Visit</string>
                                         <rect key="frame" x="20" y="256" width="272" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="go"/>
                                         <connections>
                                             <action selector="symptomNotesDidBeginEditing:" destination="Pwd-PL-GMB" eventType="editingDidBegin" id="tcx-br-jua"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration of Visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ss-1b-yc2">
                                         <rect key="frame" x="122" y="37" width="123" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -730,7 +757,7 @@ Visit</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2165" y="1806"/>
+            <point key="canvasLocation" x="2004" y="2472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y61-ml-8bh">
@@ -738,6 +765,7 @@ Visit</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wTN-1q-c4M" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hDq-pO-vcG"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tT3-90-L55">
@@ -758,17 +786,18 @@ Visit</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EC-Pq-ChE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="161.59999999999999" y="2437.6666666666665"/>
+            <point key="canvasLocation" x="183" y="2472"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrowForSliderButton" width="10" height="18"/>
         <image name="filtersButton" width="23" height="24"/>
+        <image name="iphone 5 list-filters" width="320" height="724"/>
         <image name="settingsButton" width="24" height="24"/>
         <image name="spca" width="210" height="81"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cmv-l6-hZX"/>
-        <segue reference="Dqr-Ly-WLI"/>
+        <segue reference="rXq-eF-Raa"/>
     </inferredMetricsTieBreakers>
 </document>
