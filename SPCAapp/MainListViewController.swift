@@ -43,7 +43,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // calculates start time to be 00:00 and formats timer
     func updateTime() {
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
         var elapsedTime: NSTimeInterval = currentTime - startTime
         let minutes = UInt8(elapsedTime / 60.0)
         elapsedTime -= (NSTimeInterval(minutes) * 60)

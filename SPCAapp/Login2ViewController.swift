@@ -19,7 +19,6 @@ class Login2ViewController: UIViewController, UITextFieldDelegate {
     var buttonViewInitialY: CGFloat!
     var buttonviewOffset: CGFloat!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,14 +35,12 @@ class Login2ViewController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     // function for when the keyboard hides
     func keyboardWillShow(notification: NSNotification!) {
@@ -52,13 +49,10 @@ class Login2ViewController: UIViewController, UITextFieldDelegate {
         if  loginButtonView.frame.origin.y != buttonViewInitialY - keyboardSize!.height {
             loginButtonView.frame.origin.y = buttonViewInitialY - keyboardSize!.height
         }
-        
     }
     
     // function for when the keyboard hides
     func keyboardWillHide(notification: NSNotification!) {
-        let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
-
         if  self.loginButtonView.frame.origin.y != self.buttonViewInitialY {
             self.loginButtonView.frame.origin.y = buttonViewInitialY
         }
@@ -74,7 +68,6 @@ class Login2ViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.resignFirstResponder()
             performSegueWithIdentifier("logInSegue", sender: self)
         }
-        
         return true
     }
     
