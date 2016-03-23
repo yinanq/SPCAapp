@@ -38,6 +38,9 @@ class DuringVisitViewController: UIViewController {
     var passedAnimalName: String!
     var passedRoomNumber: String!
     
+    // data to be passed to VisitSummaryViewController
+    var durationMinutes: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +53,7 @@ class DuringVisitViewController: UIViewController {
         let aSelector : Selector = "updateTime"
         visitTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
         startTime = NSDate.timeIntervalSinceReferenceDate()
+        print("start time: \(startTime)")
         
         // apply data passed from AnimalDetailsViewController
         visitTitle.text = passedVisitTitle
@@ -75,6 +79,10 @@ class DuringVisitViewController: UIViewController {
         let strSeconds = String(format: "%02d", seconds)
         
         visitDurationLabel.text = "\(strMinutes):\(strSeconds)"
+        
+        // data to be passed to VisitSummaryViewController
+        durationMinutes = "\(strMinutes)"
+        NSLog("durationMinuts: \(durationMinutes)")
     }
     
     @IBAction func didLongPressEndVisitView(sender: UILongPressGestureRecognizer) {
@@ -143,7 +151,14 @@ class DuringVisitViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
+        let destinationViewController = segue.destinationViewController as! VisitSummaryViewController
+        
         // Pass the selected object to the new view controller.
+        destinationViewController.passedAnimalPhoto = passedAnimalPhoto
+        destinationViewController.passedAnimalName = passedAnimalName
+        
+        let duration = "\(durationMinutes) minute \(passedVisitTitle)"
+        destinationViewController.passedDuration = duration
     }
 
 }
