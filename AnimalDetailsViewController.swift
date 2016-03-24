@@ -15,7 +15,9 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     var animalPhoto: UIImage!
     
     // passed data from new visit
-    var newVisitTitle = "newVisitTitle"
+//    var newVisitTitle: String!
+    var newVisitTitle = "Walk"
+    var durationMinutes: String!
     var newVisitDurationAndStartTime = "newVisitDuratinAnd"
     var newBehaviorNotes: String!
     var newSymptomNotes: String!
@@ -23,8 +25,8 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
     // local data
     var visitTitles = ["Walk", "Socialization", "Walk", "Walk", "Socialization"]
     var durationsAndStartTimes = ["20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM", "20 min from 5:00 PM"]
-    var volunteerInitials = ["initial: AB", "initial: CD", "initial: EF", "initial: GH", "initial: IJ"]
-    let userInitials = "YQ"
+    var volunteerInitials = ["Initials: AB", "Initials: CD", "Initials: EF", "Initials: GH", "Initials: IJ"]
+    let userInitials = "Initials: YQ"
     var behaviorNotesContents = ["Very sweet, takes a minute to warm up but after that she is very affectionate. She loves treats and is a good walker.", "super sweet and very playful, also loves to curl up in your lap and go to sleep", "Very good walker. Was excited to get outside. Walked by a few different dogs of all sizes and was non-reactive. BM and UR on walk.", "A real snuggle bug, she stayed on my lap for the whole visit. I had to move her at one point and she growled at me though.", "Very sweet. Likes scratches and enjoys treats. Great walker, didnt take issue with other dogs at all."]
     var symptomNotesContents = ["N/A", "Sneezed a lot at one point. Didn't seem like any serious problem.", "N/A", "N/A", "N/A"]
     var hasNewVisitToAdd = false
@@ -42,6 +44,7 @@ class AnimalDetailsViewController: UIViewController, UITableViewDataSource, UITa
         // add new cell for new visit if any
         if hasNewVisitToAdd == true {
             visitTitles.insert(newVisitTitle, atIndex: 0)
+            newVisitDurationAndStartTime = "\(durationMinutes) minute just now"
             durationsAndStartTimes.insert(newVisitDurationAndStartTime, atIndex: 0)
             volunteerInitials.insert(userInitials, atIndex: 0)
             behaviorNotesContents.insert(newBehaviorNotes, atIndex: 0)

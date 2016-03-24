@@ -41,6 +41,8 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // data passed from VisitSummaryViewController
     var newlyVisitedAnimal: String!
+    var newVisitTitle: String!
+    var durationMinutes: String!
     var newBehaviorNotes: String!
     var newSymptomNotes: String!
     var hasNewVisitToAdd = false
@@ -161,6 +163,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
                 if newlyVisitedAnimal == animalName {
                     destinationViewController.newBehaviorNotes = newBehaviorNotes
                     destinationViewController.newSymptomNotes = newSymptomNotes
+                    destinationViewController.durationMinutes = durationMinutes
                     destinationViewController.hasNewVisitToAdd = true
                 }
             }
