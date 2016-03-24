@@ -65,7 +65,8 @@ class Login2ViewController: UIViewController, UITextFieldDelegate {
         }
         else if textField == passwordTextField {
             passwordTextField.resignFirstResponder()
-            performSegueWithIdentifier("logInSegue", sender: self)
+            didPressLoginButton(self)
+//            performSegueWithIdentifier("logInSegue", sender: self)
         }
         return true
     }
