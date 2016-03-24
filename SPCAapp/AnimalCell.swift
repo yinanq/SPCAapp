@@ -20,7 +20,7 @@ class AnimalCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        photoImageView.layer.cornerRadius = 40
+        photoImageView.layer.cornerRadius = photoImageView.bounds.width/2
         photoImageView.layer.borderWidth = 7
     }
 

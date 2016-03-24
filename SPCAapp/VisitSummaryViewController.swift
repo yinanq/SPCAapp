@@ -26,6 +26,8 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        animalPhoto.layer.cornerRadius = animalPhoto.bounds.width/2
+        
         animalPhoto.image = passedAnimalPhoto
         animalName.text = passedAnimalName
         duration.text = passedDuration
