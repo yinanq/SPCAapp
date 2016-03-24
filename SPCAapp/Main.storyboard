@@ -197,7 +197,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGm-Aw-4AR">
                                         <rect key="frame" x="255" y="14" width="57" height="34"/>
                                         <connections>
-                                            <action selector="onCancelDone:" destination="z1i-eR-Ydq" eventType="touchUpInside" id="Rsh-rJ-feH"/>
+                                            <action selector="onCancelDone:" destination="z1i-eR-Ydq" eventType="touchUpInside" id="53i-Ir-hTI"/>
+                                            <segue destination="wTN-1q-c4M" kind="modal" identifier="fromSettings" id="fuh-hT-ccw"/>
                                         </connections>
                                     </button>
                                 </subviews>
