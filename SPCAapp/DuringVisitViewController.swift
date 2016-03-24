@@ -60,6 +60,8 @@ class DuringVisitViewController: UIViewController {
         animalPhoto.image = passedAnimalPhoto
         animalName.text = passedAnimalName
         roomNumber.text = passedRoomNumber
+        
+        animalPhoto.layer.cornerRadius = animalPhoto.bounds.width/2
     }
 
     override func didReceiveMemoryWarning() {
