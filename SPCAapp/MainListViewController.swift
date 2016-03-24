@@ -179,4 +179,7 @@ class MainListViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
+    @IBAction func onSettingsButton(sender: AnyObject) {
+        performSegueWithIdentifier("toSettings", sender: self)
+    }
 }

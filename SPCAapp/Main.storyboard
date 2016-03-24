@@ -81,12 +81,14 @@
                                             <action selector="onVolunteerLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OYI-xR-bit"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OTp-2s-gvR">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="OTp-2s-gvR">
                                         <rect key="frame" x="200" y="20" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OTp-2s-gvR" secondAttribute="trailing" constant="100" id="5m0-pM-otL"/>
+                                    <constraint firstItem="OTp-2s-gvR" firstAttribute="leading" secondItem="POm-dn-5uH" secondAttribute="leading" constant="200" id="P6J-0W-ewK"/>
                                     <constraint firstItem="JL0-Qh-Zqz" firstAttribute="centerY" secondItem="POm-dn-5uH" secondAttribute="centerY" id="RBF-mB-rMj"/>
                                     <constraint firstItem="JL0-Qh-Zqz" firstAttribute="centerX" secondItem="POm-dn-5uH" secondAttribute="centerX" id="WHU-tq-ZGV"/>
                                     <constraint firstAttribute="height" constant="60" id="gge-N4-dPL"/>
@@ -174,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="85" y="1412"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="tn1-A1-tFl">
             <objects>
-                <viewController id="z1i-eR-Ydq" sceneMemberID="viewController">
+                <viewController id="z1i-eR-Ydq" customClass="SettingsViewController" customModule="SPCAapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AlY-Xc-leW"/>
                         <viewControllerLayoutGuide type="bottom" id="J5d-r9-aiW"/>
@@ -186,14 +188,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Settings" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dzn-BB-xjV">
-                                <rect key="frame" x="118" y="255" width="85" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-Qd-fEf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="iphone-5-settings" translatesAutoresizingMaskIntoConstraints="NO" id="vOi-kc-usK">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="654"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGm-Aw-4AR">
+                                        <rect key="frame" x="255" y="14" width="57" height="34"/>
+                                        <connections>
+                                            <action selector="onCancelDone:" destination="z1i-eR-Ydq" eventType="touchUpInside" id="Rsh-rJ-feH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="settingsImageView" destination="vOi-kc-usK" id="fr1-zj-4bJ"/>
+                        <outlet property="settingsScrollView" destination="mwM-Qd-fEf" id="onO-li-wXz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPA-lP-F9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,7 +248,7 @@
                                 </subviews>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="filterImageView" destination="3Jz-M3-GkS" id="ZRt-Kg-9hG"/>
@@ -259,7 +274,7 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3w2-QI-CC2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBF-8q-2LL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBF-8q-2LL">
                                         <rect key="frame" x="8" y="11" width="115" height="27"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -360,6 +375,9 @@
                                 <rect key="frame" x="16" y="5" width="34" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="settingsButton"/>
+                                <connections>
+                                    <action selector="onSettingsButton:" destination="fT2-Tr-2PV" eventType="touchUpInside" id="IwT-lA-IxL"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Vof-1o-wxf">
@@ -382,7 +400,7 @@
                         <outlet property="settingsButton" destination="E4z-gz-sNJ" id="IcL-dY-SFS"/>
                         <outlet property="shiftTimer" destination="lBF-8q-2LL" id="yil-mg-kKa"/>
                         <outlet property="shiftTimerView" destination="3w2-QI-CC2" id="I4m-ed-Pxj"/>
-                        <segue destination="z1i-eR-Ydq" kind="modal" id="IsA-6a-q3w"/>
+                        <segue destination="z1i-eR-Ydq" kind="modal" identifier="toSettings" id="IsA-6a-q3w"/>
                         <segue destination="4cs-eb-Q65" kind="modal" identifier="toFilterList" id="qqy-SC-XNi"/>
                         <segue destination="Ghl-wv-Kdi" kind="modal" identifier="endShift" id="Dqr-Ly-WLI"/>
                     </connections>
@@ -805,11 +823,12 @@ Visit</string>
         <image name="arrowForSliderButton" width="10" height="18"/>
         <image name="filtersButton" width="23" height="24"/>
         <image name="iphone 5 list-filters" width="320" height="724"/>
+        <image name="iphone-5-settings" width="320" height="654"/>
         <image name="settingsButton" width="24" height="24"/>
         <image name="spca" width="210" height="81"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cmv-l6-hZX"/>
+        <segue reference="nLM-do-UNq"/>
         <segue reference="Dqr-Ly-WLI"/>
     </inferredMetricsTieBreakers>
 </document>
