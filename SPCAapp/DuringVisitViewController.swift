@@ -158,9 +158,8 @@ class DuringVisitViewController: UIViewController {
         // Pass the selected object to the new view controller.
         destinationViewController.passedAnimalPhoto = passedAnimalPhoto
         destinationViewController.passedAnimalName = passedAnimalName
-        
-        let duration = "\(durationMinutes) minute \(passedVisitTitle)"
-        destinationViewController.passedDuration = duration
+        destinationViewController.durationMinutes = durationMinutes
+        destinationViewController.passedVisitTitle = passedVisitTitle
     }
 
 }

@@ -20,6 +20,9 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
     @IBOutlet weak var animalName: UILabel!
     var passedDuration: String!
     @IBOutlet weak var duration: UILabel!
+    
+    var durationMinutes: String!
+    var passedVisitTitle: String!
 //    var passedStartTime: String!
 //    @IBOutlet weak var startTime: UILabel!
     
@@ -30,7 +33,7 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
         
         animalPhoto.image = passedAnimalPhoto
         animalName.text = passedAnimalName
-        duration.text = passedDuration
+        duration.text = "\(durationMinutes) minute \(passedVisitTitle)"
         
         visitSummaryScrollView.delegate = self
         visitSummaryScrollView.contentSize = CGSize (width: 320, height: 600)
@@ -131,6 +134,8 @@ class VisitSummaryViewController: UIViewController, UITextFieldDelegate, UIScrol
             destinationViewController.newlyVisitedAnimal = passedAnimalName
             destinationViewController.newBehaviorNotes = behaviorNotes
             destinationViewController.newSymptomNotes = symptomNotes
+            destinationViewController.durationMinutes = durationMinutes
+//            destinationViewController.newVisitTitle = passedVisitTitle
         }
     }
 
