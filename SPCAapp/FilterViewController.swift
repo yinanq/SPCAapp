@@ -27,7 +27,8 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func doneButton(sender: AnyObject) {
-        performSegueWithIdentifier("backToAllDogs", sender: self)
+//        performSegueWithIdentifier("backToAllDogs", sender: self)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     /*
